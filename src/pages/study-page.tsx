@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Layers, LayoutGrid, PanelLeftOpen, RectangleHorizontal } from 'lucide-react'
+import { Eye, Hand, Layers, LayoutGrid, PanelLeftOpen, RectangleHorizontal } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -8,8 +8,9 @@ import { ColumnResizer } from '@/components/column-resizer'
 import {
   ControlCard,
   ControlSection,
-  OptionList,
+  LayerToggle,
   Segmented,
+  SlidingSwitch,
   ToggleRow,
 } from '@/components/controls'
 import { DenominationDock } from '@/components/denomination-dock'
@@ -24,7 +25,8 @@ import { useFlows } from '@/data/store'
 import { CURRENCIES, type CurrencyCode, type Side } from '@/data/types'
 import { useColumnWidth } from '@/hooks/use-column-width'
 import { maskUrl, photoUrl, studyNotes, withoutFlow, type StudyNote } from '@/lib/study-notes'
-import type { TouchPalette } from '@/lib/touch-palette'
+import { orderColor } from '@/lib/order'
+import { PALETTES, type TouchPalette } from '@/lib/touch-palette'
 import { cn } from '@/lib/utils'
 
 type Layout = 'single' | 'grid' | 'combined'
@@ -40,6 +42,14 @@ const FLOW_MODES: { value: FlowMode; label: string }[] = [
   { value: 'markers', label: 'Markers' },
   { value: 'heatmap', label: 'Heatmap' },
 ]
+
+// Icon chips for the two layer switches echo each layer's colour scale.
+const EYE_SWATCH = `linear-gradient(135deg, ${orderColor(0)}, ${orderColor(1)} 45%, ${orderColor(4)})`
+const touchSwatch = (palette: TouchPalette) => {
+  // The darker two-thirds of the scale, so the white icon stays legible.
+  const [, a, b, c] = PALETTES[palette].map(([, rgb]) => `rgb(${rgb.join(' ')})`)
+  return `linear-gradient(135deg, ${a}, ${b} 55%, ${c})`
+}
 
 function readUrl(legacyTouch: boolean) {
   const p = new URLSearchParams(location.search)
@@ -337,12 +347,22 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
         )}
       </CanvasStage>
 
-      {/* Left column: title, controls (layout · eye flow · touch · general), details */}
+      {/* Top centre: layout switch */}
+      <div className="pointer-events-none absolute inset-x-0 top-4 z-10 flex justify-center">
+        <SlidingSwitch
+          label="Layout"
+          shortcut="G"
+          options={LAYOUTS}
+          value={layout}
+          onChange={setLayout}
+        />
+      </div>
+
+      {/* Left column: title and layer controls, then details */}
       <header
         className="pointer-events-none absolute top-0 bottom-36 left-0 z-10 flex max-w-[calc(100vw-2rem)] flex-col items-stretch gap-2 overflow-y-auto p-4"
         style={{ width: column.width + 32 }}
       >
-        {/* Card 1: what this is, and how the notes are laid out */}
         <ControlCard>
           <div className="px-3.5 pt-3 pb-2.5">
             <h1 className="text-[15px] leading-tight font-semibold">Banknote Ergo Research</h1>
@@ -350,55 +370,54 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
               Eye flow &amp; touch · Oberthur Fiduciaire
             </p>
           </div>
-          <ControlSection title="Layout" shortcut="G">
-            <OptionList label="Layout" options={LAYOUTS} value={layout} onChange={setLayout} />
-          </ControlSection>
-        </ControlCard>
-
-        {/* Card 2: what is drawn on the notes */}
-        <ControlCard>
-          <ControlSection title="Eye flow" shortcut="E · H">
-            <ToggleRow
-              label="Show eye flow"
-              checked={showFlow}
-              onChange={setShowFlow}
-              hint="Where people looked, in order (E)"
-            />
+          {/* The two data layers are the primary switches */}
+          <LayerToggle
+            icon={Eye}
+            title="Eye flow"
+            description="Where people looked"
+            shortcut="E"
+            swatch={EYE_SWATCH}
+            checked={showFlow}
+            onChange={setShowFlow}
+          >
             <Segmented
               label="Eye flow display"
               options={FLOW_MODES}
               value={flowMode}
               onChange={setFlowMode}
-              disabled={!showFlow}
             />
             {layout === 'combined' && flowMode === 'markers' && (
               <ToggleRow
                 label="All flows equally"
                 checked={showAllFlows}
                 onChange={setShowAllFlows}
-                disabled={!showFlow}
                 hint="Show every observer at full strength instead of focusing the selected one"
               />
             )}
-          </ControlSection>
+          </LayerToggle>
 
-          <ControlSection title="Touch" shortcut="T · U">
-            <ToggleRow
-              label="Show touch"
-              checked={showTouch}
-              onChange={setShowTouch}
-              hint="Where people held the note, from the UV-ink photos (T)"
-            />
+          <LayerToggle
+            icon={Hand}
+            title="Touch"
+            description="Where people held it"
+            shortcut="T"
+            swatch={touchSwatch(touchPalette)}
+            checked={showTouch}
+            onChange={setShowTouch}
+          />
+
+          <ControlSection title="General">
             <ToggleRow
               label="UV photo"
               checked={showPhoto}
               onChange={setShowPhoto}
               disabled={!showTouch}
-              hint="Show the UV photo above the note (U)"
+              hint={
+                showTouch
+                  ? 'Show the UV photo above the note (U)'
+                  : 'Turn on Touch to show the UV photos (U)'
+              }
             />
-          </ControlSection>
-
-          <ControlSection title="General" shortcut="B">
             <ToggleRow
               label="B&W note"
               checked={mono}

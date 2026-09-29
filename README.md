@@ -11,18 +11,17 @@ npm run dev
 
 ## Using the canvas
 
-The left column holds the controls, top to bottom:
+**Layout** is the switch at the top centre (key `G` cycles):
+- **Single:** one note.
+- **All notes:** every denomination of the currency side by side, with one button to flip them all.
+- **Combined:** all denominations stacked in one frame.
 
-1. **Layout** (key `G` cycles):
-   - **Single:** one note.
-   - **All notes:** every denomination of the currency side by side.
-   - **Combined:** all denominations stacked in one frame.
-2. **Eye flow** (key `E` toggles):
-   - Show it as **Markers** (numbered points and paths) or as a **Heatmap** (key `H`). The heatmap's colour shows how early an area was looked at, and it includes the path between points.
-   - In Combined with markers, **All flows equally** shows every observer at full strength instead of focusing the selected one.
-3. **Touch** (key `T` toggles): the touch heat. **UV photo** (key `U`) shows the straightened UV photo above each note, or a row of photos in Combined.
-4. **General:** **B&W note** (key `B`) shows the artwork in black and white, so only the data has colour.
-5. **Details** for the selected note. It scrolls if it's long and can be collapsed.
+The left column holds the rest:
+
+1. **Eye flow** (key `E`), a main layer switch: where people looked, in order. Show it as **Markers** (numbered points and paths) or as a **Heatmap** (key `H`). The heatmap's colour shows how early an area was looked at, and it includes the path between points. In Combined with markers, **All flows equally** shows every observer at full strength instead of focusing the selected one.
+2. **Touch** (key `T`), a main layer switch: where people held the note.
+3. **General:** **UV photo** (key `U`) shows the straightened UV photo above each note, or a row of photos in Combined; it needs Touch on. **B&W note** (key `B`) shows the artwork in black and white, so only the data has colour.
+4. **Details** for the selected note. It scrolls if it's long and can be collapsed.
 
 Drag the column's right edge to resize it; double-click the edge to reset. The width is remembered.
 
