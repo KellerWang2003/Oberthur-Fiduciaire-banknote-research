@@ -587,12 +587,12 @@
         "pinkSaturation": 0.25,
         "greenSaturation": 0.3,
         "greenHue": 170,
-        "cyanHue": 193,
+        "cyanHue": 199,
         "paleSaturation": 0.4,
         "paleValue": 0.6
       },
-      "coverage": 0.4583,
-      "savedAt": 1790647345781,
+      "coverage": 0.5095,
+      "savedAt": 1790649797720,
       "photo": "/touch/chf-10-front-photo.jpg",
       "mask": "/touch/chf-10-front.png"
     }

@@ -9,15 +9,22 @@ npm run dev
 
 ## Using the canvas
 
-- **Pages:** the top-left card lists both studies (Visual Flow and Touch Heatmap); click one to switch.
-- **Layouts:** pick one from the dropdown in the top-right corner (key `G` cycles through them):
+- **Left column**, top to bottom:
+  - **Studies:** page navigation between Visual Flow and Touch Heatmap.
+  - **View:** the layouts listed as buttons (key `G` cycles through them), then **Options** (switches).
+  - **Details** for the selected note. It scrolls if it's long and can be collapsed.
+
+  Drag the column's right edge to resize all three panels together; double-click the edge to reset. The width is remembered.
+- **Zoom** controls sit in the top-right corner, with the **Edit** switch (Visual Flow) under them.
+- **B&W** option (key `B`) on both pages shows the banknote artwork in black and white, so only the data (flow or touch heat) carries colour.
+- **Layouts:**
   - **Single:** one note at a time.
   - **All 4:** the four notes side by side.
   - **Overlay:** the four notes stacked and faded, with every flow drawn on top. The selected observer's flow is in focus; turn on *Show all flows equally* in the details panel to see all four at full strength.
-  - **Overlay heatmap** (key `H`): all four observers combined into one heatmap. Colour shows how early an area was looked at (red = seen first, blue = seen later), and stronger colour means more attention there.
+  - **Overlay heatmap** (key `H`): all four observers combined into one heatmap. Colour shows how early an area was looked at (red = seen first, blue = seen later), and stronger colour means more attention there. The path the eye travelled between points is included as a lighter trail, so the heatmap shows the route as well as the stops.
 - **Flip:** each note has its own **Flip** button under its bottom centre, which moves with the note as you pan. In All 4, every note can be flipped separately; in the overlay layouts, one button flips the whole stack. Key `F` flips the selected note.
 - **Bottom:** currency tabs (keys `1`–`5`) sit above the denomination dock (keys `←` `→`).
-- **Moving around:** scroll to pan, ⌘/Ctrl + scroll or pinch to zoom, and drag empty space to pan. The zoom buttons under the page list zoom and re-fit.
+- **Moving around:** scroll to pan, ⌘/Ctrl + scroll or pinch to zoom, and drag empty space to pan. The zoom buttons in the top-right corner zoom and re-fit.
 - **Links:** the URL keeps the current currency, denomination and layout, so you can share a link to a specific note.
 
 ## Gaze order colours
@@ -31,7 +38,7 @@ Markers and lines go from warm and solid for the first things noticed to cool an
 
 ## Edit mode
 
-Turn on **Edit** in the top-right corner. Save, Export and Discard are at the bottom of the details panel.
+Turn on **Edit** under the zoom controls in the top-right corner. Save, Export and Discard are at the bottom of the Details panel.
 
 - Click the note to add a point, and drag a marker to move it. Dragging elsewhere pans the canvas.
 - In the list, rename, reorder or delete points.
@@ -42,7 +49,7 @@ Turn on **Edit** in the top-right corner. Save, Export and Discard are at the bo
 
 ## Touch Heatmap page
 
-Open it from the top-left page list, or go to `#/touch`. This page shows where people held the notes, measured with invisible UV ink on three participants' hands. All three are combined, and fronts and backs are kept separate.
+Open it from **Studies** in the left column, or go to `#/touch`. This page shows where people held the notes, measured with invisible UV ink on three participants' hands. All three are combined, and fronts and backs are kept separate.
 
 - **Currencies:** Euro, Swiss Franc, Ruble and Pound (keys `1`–`4`).
 - **Layouts** (key `G`):

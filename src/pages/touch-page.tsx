@@ -2,27 +2,23 @@ import { useEffect, useRef, useState } from 'react'
 import {
   Layers,
   LayoutGrid,
-  PanelRightClose,
-  PanelRightOpen,
+  PanelLeftClose,
+  PanelLeftOpen,
   RectangleHorizontal,
   ScanSearch,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import { Separator } from '@/components/ui/separator'
 import { Switch } from '@/components/ui/switch'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CanvasStage } from '@/components/canvas-stage'
 import { DenominationDock } from '@/components/denomination-dock'
 import { FlipButton } from '@/components/flip-button'
+import { ModePanel } from '@/components/mode-panel'
+import { ColumnResizer } from '@/components/column-resizer'
 import { PageSwitcher } from '@/components/page-switcher'
+import { useColumnWidth } from '@/hooks/use-column-width'
 import { TOUCH_GRADIENT, TouchHeatLayer } from '@/components/touch-heat-layer'
 import touchData from '@/data/touch.json'
 import { CURRENCIES, type Side, type TouchCurrency, type TouchEntry } from '@/data/types'
@@ -43,7 +39,6 @@ const TOUCH_CURRENCIES = CURRENCIES.filter((c) => c.code !== 'USD') as {
 }[]
 
 const entries = touchData as TouchEntry[]
-const PANEL_WIDTH = 340
 const HORIZONTAL_WIDTH = 960
 const VERTICAL_HEIGHT = 900
 
@@ -334,6 +329,7 @@ export function TouchPage() {
   const [combinedSide, setCombinedSide] = useState<Side>('front')
   const [panelOpen, setPanelOpen] = useState(true)
   const [zoomSlot, setZoomSlot] = useState<HTMLDivElement | null>(null)
+  const column = useColumnWidth()
   const [showPhoto, setShowPhoto] = useState(initial.showPhoto)
   const [mono, setMono] = useState(initial.mono)
 
@@ -392,9 +388,14 @@ export function TouchPage() {
     return () => window.removeEventListener('keydown', onKey)
   })
 
-  const fitKey = [layout, currency, layout === 'single' ? note.key : '', panelOpen, showPhoto].join(
-    '|',
-  )
+  const fitKey = [
+    layout,
+    currency,
+    layout === 'single' ? note.key : '',
+    panelOpen,
+    showPhoto,
+    column.settled,
+  ].join('|')
   const coverageOf = (s: Side) => {
     const list = notes
       .map((n) => n[s].extraction?.coverage)
@@ -408,7 +409,13 @@ export function TouchPage() {
         controlsContainer={zoomSlot}
         fitTarget={{ single: singleRef, grid: gridRef, combined: combinedRef }[layout]}
         fitKey={fitKey}
-        insets={{ top: 72, bottom: 150, left: 24, right: panelOpen ? PANEL_WIDTH + 32 : 24 }}
+        insets={{
+          top: 64,
+          bottom: 150,
+          // Column panels + its padding, plus a small gap before the note.
+          left: column.settled + 40,
+          right: 24,
+        }}
       >
         {layout === 'single' && (
           <TouchNote
@@ -453,59 +460,31 @@ export function TouchPage() {
         )}
       </CanvasStage>
 
-      <header className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between gap-3 p-4">
-        <div className="flex flex-col items-start gap-2">
-          <PageSwitcher current="touch" subtitle="UV-ink handling study" />
-          {/* Zoom controls from CanvasStage render here */}
-          <div ref={setZoomSlot} className="pointer-events-auto" />
-        </div>
-        <div className="pointer-events-auto flex items-center gap-2 rounded-xl border bg-background/95 p-1 shadow-sm backdrop-blur">
-          <Select value={layout} onValueChange={(v) => setLayout(v as Layout)}>
-            <SelectTrigger size="sm" className="border-0 bg-muted shadow-none" title="Layout (G)">
-              <SelectValue>
-                {(value: Layout) => {
-                  const l = LAYOUTS.find((x) => x.value === value)!
-                  return (
-                    <>
-                      <l.icon />
-                      {l.label}
-                    </>
-                  )
-                }}
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent align="end" alignItemWithTrigger={false}>
-              {LAYOUTS.map((l) => (
-                <SelectItem key={l.value} value={l.value}>
-                  <l.icon />
-                  {l.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+      {/* Left column: page navigation, view modes, details */}
+      <header
+        className="pointer-events-none absolute top-0 bottom-36 left-0 z-10 flex max-w-[calc(100vw-2rem)] flex-col items-stretch gap-2 p-4"
+        style={{ width: column.width + 32 }}
+      >
+        <PageSwitcher current="touch" />
+        <ModePanel modes={LAYOUTS} value={layout} onChange={setLayout}>
           <label
-            className="flex items-center gap-2 pr-2 text-sm whitespace-nowrap"
+            className="flex items-center gap-2 px-2 py-1 text-sm whitespace-nowrap"
             title="Show the UV photo above each note (U)"
           >
             <Switch checked={showPhoto} onCheckedChange={setShowPhoto} />
             UV photo
           </label>
           <label
-            className="flex items-center gap-2 pr-2 text-sm whitespace-nowrap"
+            className="flex items-center gap-2 px-2 py-1 text-sm whitespace-nowrap"
             title="Show the notes in black and white so only the ink heat has colour (B)"
           >
             <Switch checked={mono} onCheckedChange={setMono} />
             B&amp;W
           </label>
-        </div>
-      </header>
-
-      {panelOpen ? (
-        <div
-          className="pointer-events-none absolute top-20 right-4 bottom-40 z-10 flex max-w-[calc(100vw-2rem)] flex-col"
-          style={{ width: PANEL_WIDTH }}
-        >
-          <aside className="pointer-events-auto flex max-h-full flex-col overflow-hidden rounded-xl border bg-background/95 shadow-lg backdrop-blur">
+        </ModePanel>
+        {/* Details for the selected note */}
+        {panelOpen ? (
+          <aside className="pointer-events-auto flex min-h-0 flex-col overflow-hidden rounded-xl border bg-background/95 shadow-lg backdrop-blur">
             <div className="flex items-start gap-2 p-4 pb-3">
               <div className="min-w-0 flex-1">
                 <h2 className="text-base font-semibold">
@@ -521,7 +500,7 @@ export function TouchPage() {
                 aria-label="Hide panel"
                 onClick={() => setPanelOpen(false)}
               >
-                <PanelRightClose />
+                <PanelLeftClose />
               </Button>
             </div>
             <Separator />
@@ -584,18 +563,22 @@ export function TouchPage() {
               )}
             </div>
           </aside>
-        </div>
-      ) : (
-        <Button
-          variant="outline"
-          size="sm"
-          className="absolute top-20 right-4 z-10 shadow-sm"
-          onClick={() => setPanelOpen(true)}
-        >
-          <PanelRightOpen />
-          Details
-        </Button>
-      )}
+        ) : (
+          <Button
+            variant="outline"
+            size="sm"
+            className="pointer-events-auto w-fit shadow-sm"
+            onClick={() => setPanelOpen(true)}
+          >
+            <PanelLeftOpen />
+            Details
+          </Button>
+        )}
+        <ColumnResizer {...column.handleProps} />
+      </header>
+
+      {/* Zoom controls from CanvasStage render here */}
+      <div ref={setZoomSlot} className="absolute top-4 right-4 z-10" />
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex flex-col items-center gap-2 p-4">
         <Tabs

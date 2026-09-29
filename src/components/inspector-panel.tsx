@@ -1,4 +1,4 @@
-import { Download, Hand, PanelRightClose, Save, Undo2 } from 'lucide-react'
+import { Download, Hand, PanelLeftClose, Save, Undo2 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
@@ -47,7 +47,7 @@ export function InspectorPanel({
   onShowAllFlowsChange,
 }: Props) {
   return (
-    <aside className="flex max-h-full w-full flex-col overflow-hidden rounded-xl border bg-background/95 shadow-lg backdrop-blur">
+    <aside className="flex min-h-0 w-full flex-col overflow-hidden rounded-xl border bg-background/95 shadow-lg backdrop-blur">
       <div className="flex items-start gap-2 p-4 pb-3">
         <div className="min-w-0 flex-1">
           <div className="flex items-baseline gap-2">
@@ -67,7 +67,7 @@ export function InspectorPanel({
           </div>
         </div>
         <Button variant="ghost" size="icon-sm" aria-label="Hide panel" onClick={onClose}>
-          <PanelRightClose />
+          <PanelLeftClose />
         </Button>
       </div>
 

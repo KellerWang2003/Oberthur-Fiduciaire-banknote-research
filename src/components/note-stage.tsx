@@ -14,6 +14,8 @@ type Props = {
   onPointsChange: (side: Side, points: FlowPoint[]) => void
   onSelect?: () => void
   onFlip: () => void
+  /** Black-and-white artwork */
+  mono?: boolean
   ref?: React.Ref<HTMLDivElement>
 }
 
@@ -32,6 +34,7 @@ export function NoteStage({
   onPointsChange,
   onSelect,
   onFlip,
+  mono = false,
   ref,
 }: Props) {
   const flipped = side === 'back'
@@ -39,6 +42,7 @@ export function NoteStage({
 
   const faceProps = (s: Side) => ({
     image: note[s].image,
+    mono,
     alt: `${note.label} ${s}`,
     points: note[s].points,
     // In the grid only the selected note is editable; clicking the others selects them.
@@ -55,7 +59,9 @@ export function NoteStage({
         <div className="flex items-baseline gap-3 text-2xl">
           <span className="font-semibold">{note.label}</span>
           <span className="text-muted-foreground">{note.observer}</span>
-          <span className="ml-auto text-base tracking-wide text-muted-foreground uppercase">{side}</span>
+          <span className="ml-auto text-base tracking-wide text-muted-foreground uppercase">
+            {side}
+          </span>
         </div>
       )}
       <div

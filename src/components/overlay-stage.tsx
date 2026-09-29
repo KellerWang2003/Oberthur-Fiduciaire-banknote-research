@@ -18,6 +18,8 @@ type Props = {
   onHighlight: (id: string | null) => void
   onPointsChange: (noteId: string, side: Side, points: FlowPoint[]) => void
   onFlip: () => void
+  /** Fully black-and-white artwork (otherwise lightly desaturated) */
+  mono?: boolean
   ref?: React.Ref<HTMLDivElement>
 }
 
@@ -41,6 +43,7 @@ export function OverlayStage({
   onHighlight,
   onPointsChange,
   onFlip,
+  mono = false,
   ref,
 }: Props) {
   // Notes of one currency differ slightly in proportion; stretch them to a shared frame.
@@ -67,7 +70,10 @@ export function OverlayStage({
           src={n[s].image}
           alt=""
           draggable={false}
-          className="pointer-events-none absolute inset-0 size-full object-fill opacity-30 mix-blend-multiply grayscale-[40%] select-none"
+          className={cn(
+            'pointer-events-none absolute inset-0 size-full object-fill opacity-30 mix-blend-multiply select-none',
+            mono ? 'grayscale' : 'grayscale-[40%]',
+          )}
         />
       ))}
       {mode === 'heatmap' && <HeatmapLayer notes={notes} side={s} aspect={aspect} />}

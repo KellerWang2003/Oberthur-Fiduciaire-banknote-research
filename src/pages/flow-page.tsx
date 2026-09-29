@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
-import { Flame, Layers, LayoutGrid, PanelRightOpen, RectangleHorizontal } from 'lucide-react'
+import { Flame, Layers, LayoutGrid, PanelLeftOpen, RectangleHorizontal } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Switch } from '@/components/ui/switch'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CanvasStage } from '@/components/canvas-stage'
 import { DenominationDock } from '@/components/denomination-dock'
 import { InspectorPanel } from '@/components/inspector-panel'
 import { NoteStage } from '@/components/note-stage'
 import { OverlayStage } from '@/components/overlay-stage'
+import { ModePanel } from '@/components/mode-panel'
+import { ColumnResizer } from '@/components/column-resizer'
 import { PageSwitcher } from '@/components/page-switcher'
+import { useColumnWidth } from '@/hooks/use-column-width'
 import { useFlows } from '@/data/store'
 import { CURRENCIES, type CurrencyCode, type Side } from '@/data/types'
 import { cn } from '@/lib/utils'
@@ -23,7 +25,6 @@ const LAYOUTS: { value: Layout; label: string; icon: typeof Layers }[] = [
   { value: 'heatmap', label: 'Overlay heatmap', icon: Flame },
 ]
 
-const PANEL_WIDTH = 360
 
 function readUrl() {
   const p = new URLSearchParams(location.search)
@@ -35,6 +36,7 @@ function readUrl() {
     layout: (p.get('view') === 'overlay' && p.get('mode') === 'heatmap'
       ? 'heatmap'
       : (LAYOUTS.find((l) => l.value === p.get('view'))?.value ?? 'single')) as Layout,
+    mono: p.get('bw') === '1',
   }
 }
 
@@ -53,8 +55,10 @@ export function FlowPage() {
   const [overlaySide, setOverlaySide] = useState<Side>('front')
   const [showAllFlows, setShowAllFlows] = useState(false)
   const [editing, setEditing] = useState(false)
+  const [mono, setMono] = useState(initial.mono)
   const [panelOpen, setPanelOpen] = useState(true)
   const [zoomSlot, setZoomSlot] = useState<HTMLDivElement | null>(null)
+  const column = useColumnWidth()
   const [highlighted, setHighlighted] = useState<string | null>(null)
   const [status, setStatus] = useState<string | null>(null)
 
@@ -97,10 +101,11 @@ export function FlowPage() {
   useEffect(() => {
     const p = new URLSearchParams({ c: currency, d: String(note.denomination) })
     if (layout !== 'single') p.set('view', layout)
+    if (mono) p.set('bw', '1')
     history.replaceState(null, '', `?${p}`)
-  }, [currency, note.denomination, layout])
+  }, [currency, note.denomination, layout, mono])
 
-  // Keyboard: F flip · ←/→ denomination · 1–5 currency · G cycle layout · H heatmap
+  // Keyboard: F flip · ←/→ denomination · 1–5 currency · G cycle layout · H heatmap · B black & white
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       const t = e.target as HTMLElement
@@ -111,6 +116,7 @@ export function FlowPage() {
         const l = LAYOUTS.findIndex((x) => x.value === layout)
         setLayout(LAYOUTS[(l + 1) % LAYOUTS.length].value)
       } else if (e.key === 'h' || e.key === 'H') setLayout((l) => (l === 'heatmap' ? 'overlay' : 'heatmap'))
+      else if (e.key === 'b' || e.key === 'B') setMono((v) => !v)
       else if (e.key === 'ArrowRight') select(notes[(i + 1) % notes.length].id)
       else if (e.key === 'ArrowLeft') select(notes[(i - 1 + notes.length) % notes.length].id)
       else if (/^[1-5]$/.test(e.key)) setCurrency(CURRENCIES[Number(e.key) - 1].code)
@@ -122,7 +128,9 @@ export function FlowPage() {
   })
 
   const vertical = notes[0]?.orientation === 'vertical'
-  const fitKey = [view, currency, view === 'single' ? note.id : '', panelOpen].join('|')
+  const fitKey = [view, currency, view === 'single' ? note.id : '', panelOpen, column.settled].join(
+    '|',
+  )
 
   return (
     <div className="fixed inset-0 overflow-hidden bg-background text-foreground">
@@ -130,10 +138,17 @@ export function FlowPage() {
         controlsContainer={zoomSlot}
         fitTarget={{ single: singleRef, grid: gridRef, overlay: overlayRef }[view]}
         fitKey={fitKey}
-        insets={{ top: 72, bottom: 150, left: 24, right: panelOpen ? PANEL_WIDTH + 32 : 24 }}
+        insets={{
+          top: 64,
+          bottom: 150,
+          // Column panels + its padding, plus a small gap before the note.
+          left: column.settled + 40,
+          right: 24,
+        }}
       >
         {view === 'single' ? (
           <NoteStage
+            mono={mono}
             key={note.id}
             ref={singleRef}
             note={note}
@@ -146,6 +161,7 @@ export function FlowPage() {
           />
         ) : view === 'overlay' ? (
           <OverlayStage
+            mono={mono}
             ref={overlayRef}
             notes={notes}
             selectedId={note.id}
@@ -165,6 +181,7 @@ export function FlowPage() {
           >
             {notes.map((n) => (
               <NoteStage
+                mono={mono}
                 key={n.id}
                 note={n}
                 side={sideOf(n.id)}
@@ -183,51 +200,23 @@ export function FlowPage() {
       </CanvasStage>
 
       {/* Top bar */}
-      <header className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-start justify-between gap-3 p-4">
-        <div className="flex flex-col items-start gap-2">
-          <PageSwitcher current="flow" subtitle={CURRENCIES.find((c) => c.code === currency)?.series} />
-          {/* Zoom controls from CanvasStage render here */}
-          <div ref={setZoomSlot} className="pointer-events-auto" />
-        </div>
-
-
-        <div className="pointer-events-auto flex items-center gap-2 rounded-xl border bg-background/95 p-1 pl-1 shadow-sm backdrop-blur">
-          <Select value={layout} onValueChange={(v) => setLayout(v as Layout)}>
-            <SelectTrigger size="sm" className="border-0 bg-muted shadow-none" title="Layout (G)">
-              <SelectValue>
-                {(value: Layout) => {
-                  const l = LAYOUTS.find((x) => x.value === value)!
-                  return (
-                    <>
-                      <l.icon />
-                      {l.label}
-                    </>
-                  )
-                }}
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent align="end" alignItemWithTrigger={false}>
-              {LAYOUTS.map((l) => (
-                <SelectItem key={l.value} value={l.value}>
-                  <l.icon />
-                  {l.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <label className="flex items-center gap-2 pr-2 text-sm whitespace-nowrap">
-            <Switch checked={editing} onCheckedChange={setEditing} />
-            Edit
+      {/* Left column: page navigation, view modes, details */}
+      <header
+        className="pointer-events-none absolute top-0 bottom-36 left-0 z-10 flex max-w-[calc(100vw-2rem)] flex-col items-stretch gap-2 p-4"
+        style={{ width: column.width + 32 }}
+      >
+        <PageSwitcher current="flow" />
+        <ModePanel modes={LAYOUTS} value={layout} onChange={setLayout}>
+          <label
+            className="flex items-center gap-2 px-2 py-1 text-sm whitespace-nowrap"
+            title="Show the notes in black and white so only the flow has colour (B)"
+          >
+            <Switch checked={mono} onCheckedChange={setMono} />
+            B&amp;W
           </label>
-        </div>
-      </header>
-
-      {/* Right inspector */}
-      {panelOpen ? (
-        <div
-          className="pointer-events-none absolute top-20 right-4 bottom-40 z-10 flex max-w-[calc(100vw-2rem)] flex-col"
-          style={{ width: PANEL_WIDTH }}
-        >
+        </ModePanel>
+        {/* Details for the selected note */}
+        {panelOpen ? (
           <div className="pointer-events-auto flex min-h-0 flex-col">
             <InspectorPanel
               note={note}
@@ -248,18 +237,30 @@ export function FlowPage() {
               onShowAllFlowsChange={setShowAllFlows}
             />
           </div>
-        </div>
-      ) : (
-        <Button
-          variant="outline"
-          size="sm"
-          className="absolute top-20 right-4 z-10 shadow-sm"
-          onClick={() => setPanelOpen(true)}
-        >
-          <PanelRightOpen />
-          Details
-        </Button>
-      )}
+        ) : (
+          <Button
+            variant="outline"
+            size="sm"
+            className="pointer-events-auto w-fit shadow-sm"
+            onClick={() => setPanelOpen(true)}
+          >
+            <PanelLeftOpen />
+            Details
+          </Button>
+        )}
+        <ColumnResizer {...column.handleProps} />
+      </header>
+
+      {/* Zoom controls from CanvasStage render here */}
+      <div className="absolute top-4 right-4 z-10 flex flex-col items-end gap-2">
+        <div ref={setZoomSlot} />
+        {/* Edit mode is a tool, not a view option, so it sits apart from the left column */}
+        <label className="flex items-center gap-2 rounded-lg border bg-background/95 px-2.5 py-1.5 text-sm shadow-sm backdrop-blur">
+          <Switch checked={editing} onCheckedChange={setEditing} />
+          Edit
+        </label>
+      </div>
+
 
       {/* Bottom: currency tabs above the denomination dock (flip buttons live on the canvas) */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex flex-col items-center gap-2 p-4">

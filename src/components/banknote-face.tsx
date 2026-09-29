@@ -17,6 +17,8 @@ type Props = {
   muted?: boolean
   /** Short label pinned to the first point, e.g. observer initials */
   tag?: string
+  /** Black-and-white artwork, so only the flow carries colour */
+  mono?: boolean
 }
 
 const clamp = (v: number) => Math.min(1, Math.max(0, v))
@@ -39,6 +41,7 @@ export function BanknoteFace({
   onChange,
   muted = false,
   tag,
+  mono = false,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const dragging = useRef<string | null>(null)
@@ -78,7 +81,10 @@ export function BanknoteFace({
           src={image}
           alt={alt}
           draggable={false}
-          className="pointer-events-none size-full object-fill select-none"
+          className={cn(
+            'pointer-events-none size-full object-fill transition-[filter] duration-300 select-none',
+            mono && 'grayscale',
+          )}
         />
       )}
 
@@ -105,7 +111,11 @@ export function BanknoteFace({
                 x2={s.to.x * 100}
                 y2={s.to.y * 100}
               >
-                <stop offset="0" stopColor={orderColor(s.index)} stopOpacity={orderOpacity(s.index)} />
+                <stop
+                  offset="0"
+                  stopColor={orderColor(s.index)}
+                  stopOpacity={orderOpacity(s.index)}
+                />
                 <stop
                   offset="1"
                   stopColor={orderColor(s.index + 1)}
