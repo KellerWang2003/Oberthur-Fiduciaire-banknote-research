@@ -1,0 +1,1200 @@
+[
+  {
+    "id": "usd-keller",
+    "currency": "USD",
+    "observer": "Keller Wang",
+    "denomination": 10,
+    "label": "$10",
+    "orientation": "horizontal",
+    "grip": "Both hands, one on each bottom corner",
+    "quote": "10 dollar bill, face first, then the number and corners, then the circle, flip and see the denomination, look through light and feel the texture, there is not much security features that are noticeable",
+    "notes": "Afterwards held it up to the light and felt the texture.",
+    "front": {
+      "image": "/notes/USD_0010_front.jpg",
+      "points": [
+        {
+          "label": "Portrait",
+          "x": 0.41,
+          "y": 0.46,
+          "id": "usd-keller-f1"
+        },
+        {
+          "label": "Numeral & corners",
+          "x": 0.11,
+          "y": 0.21,
+          "id": "usd-keller-f2"
+        },
+        {
+          "label": "Circle (Treasury seal)",
+          "x": 0.74,
+          "y": 0.48,
+          "id": "usd-keller-f3"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/USD_0010_back.jpg",
+      "points": [
+        {
+          "label": "Denomination",
+          "x": 0.896,
+          "y": 0.836,
+          "id": "usd-keller-b1"
+        },
+        {
+          "id": "23476127",
+          "label": "Point 2",
+          "x": 0.482,
+          "y": 0.517
+        },
+        {
+          "id": "ef914466",
+          "label": "Point 3",
+          "x": 0.141,
+          "y": 0.49
+        }
+      ]
+    },
+    "aspect": 2.346
+  },
+  {
+    "id": "usd-sylva",
+    "currency": "USD",
+    "observer": "Sylva Tang",
+    "denomination": 1,
+    "label": "$1",
+    "orientation": "horizontal",
+    "grip": "Both hands, one on each bottom corner",
+    "quote": "1 dollar bill, face first, then the number, flip over and see the eagle, look close on the pyramid, and big L. Look through light and make sure the texture is familiar",
+    "notes": "Afterwards held it up to the light to check the texture was familiar.",
+    "front": {
+      "image": "/notes/USD_0001_front.jpg",
+      "points": [
+        {
+          "label": "Portrait",
+          "x": 0.51,
+          "y": 0.49,
+          "id": "usd-sylva-f1"
+        },
+        {
+          "label": "Numeral (top right)",
+          "x": 0.085,
+          "y": 0.245,
+          "id": "usd-sylva-f2"
+        },
+        {
+          "label": "Seal (left)",
+          "x": 0.24,
+          "y": 0.49,
+          "id": "usd-sylva-f3"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/USD_0001_back.jpg",
+      "points": [
+        {
+          "label": "Eagle",
+          "x": 0.212,
+          "y": 0.51,
+          "id": "usd-sylva-b1"
+        },
+        {
+          "label": "Pyramid",
+          "x": 0.508,
+          "y": 0.498,
+          "id": "usd-sylva-b2"
+        },
+        {
+          "label": "Large “ONE” (noted as “big L”)",
+          "x": 0.79,
+          "y": 0.502,
+          "id": "usd-sylva-b3"
+        }
+      ]
+    },
+    "aspect": 2.3634
+  },
+  {
+    "id": "usd-rylee",
+    "currency": "USD",
+    "observer": "Rylee Kang",
+    "denomination": 100,
+    "label": "$100",
+    "orientation": "horizontal",
+    "grip": "One hand, in the middle of the bottom edge",
+    "quote": "100 face and then circle on the left, corners, then the types, then the circle on the right side. when turn around, see the number 100 first, then the illustration, and lastly in god we trust. Hold with one hand in the middle.",
+    "front": {
+      "image": "/notes/USD_0100_front.jpg",
+      "points": [
+        {
+          "label": "Portrait",
+          "x": 0.4,
+          "y": 0.47,
+          "id": "usd-rylee-f1"
+        },
+        {
+          "label": "Circle on the left & corners",
+          "x": 0.12,
+          "y": 0.22,
+          "id": "usd-rylee-f2"
+        },
+        {
+          "label": "Type (United States of America)",
+          "x": 0.64,
+          "y": 0.2,
+          "id": "usd-rylee-f3"
+        },
+        {
+          "label": "Circle on the right",
+          "x": 0.78,
+          "y": 0.47,
+          "id": "usd-rylee-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/USD_0100_back.jpg",
+      "points": [
+        {
+          "label": "100",
+          "x": 0.87,
+          "y": 0.55,
+          "id": "usd-rylee-b1"
+        },
+        {
+          "label": "Illustration (Independence Hall)",
+          "x": 0.5,
+          "y": 0.6,
+          "id": "usd-rylee-b2"
+        },
+        {
+          "label": "“In God We Trust”",
+          "x": 0.5,
+          "y": 0.22,
+          "id": "usd-rylee-b3"
+        }
+      ]
+    },
+    "aspect": 2.3358
+  },
+  {
+    "id": "usd-wen",
+    "currency": "USD",
+    "observer": "Wen Jing",
+    "denomination": 20,
+    "label": "$20",
+    "orientation": "horizontal",
+    "grip": "Both hands, one on each bottom corner",
+    "quote": "20 Eyes on the face, right-green circle, number upper right corner, 20 USA watermark (pattern), filp it- in god we trust, the white house hold it both with both hands, each corner on the bottom side",
+    "front": {
+      "image": "/notes/USD_0020_front.jpg",
+      "points": [
+        {
+          "label": "Portrait (eyes)",
+          "x": 0.41,
+          "y": 0.47,
+          "id": "usd-wen-f1"
+        },
+        {
+          "label": "Green circle (right)",
+          "x": 0.74,
+          "y": 0.51,
+          "id": "usd-wen-f2"
+        },
+        {
+          "label": "Numeral (upper right)",
+          "x": 0.92,
+          "y": 0.2,
+          "id": "usd-wen-f3"
+        },
+        {
+          "label": "“20 USA” watermark pattern",
+          "x": 0.89,
+          "y": 0.77,
+          "id": "usd-wen-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/USD_0020_back.jpg",
+      "points": [
+        {
+          "label": "“In God We Trust”",
+          "x": 0.5,
+          "y": 0.2,
+          "id": "usd-wen-b1"
+        },
+        {
+          "label": "White House",
+          "x": 0.5,
+          "y": 0.55,
+          "id": "usd-wen-b2"
+        }
+      ]
+    },
+    "aspect": 2.3774
+  },
+  {
+    "id": "eur-keller",
+    "currency": "EUR",
+    "observer": "Keller Wang",
+    "denomination": 50,
+    "label": "€50",
+    "orientation": "horizontal",
+    "quote": "50 50 in the middle, then the building, then the left bottom 50 and the european flag on top, trun around, look at the bridge, then the 50 at the bottom right.",
+    "front": {
+      "image": "/notes/EUR_0050_front.jpg",
+      "points": [
+        {
+          "label": "50 (middle)",
+          "x": 0.38,
+          "y": 0.25,
+          "id": "eur-keller-f1"
+        },
+        {
+          "label": "Building",
+          "x": 0.65,
+          "y": 0.55,
+          "id": "eur-keller-f2"
+        },
+        {
+          "label": "50 (bottom left)",
+          "x": 0.14,
+          "y": 0.82,
+          "id": "eur-keller-f3"
+        },
+        {
+          "label": "European flag",
+          "x": 0.14,
+          "y": 0.12,
+          "id": "eur-keller-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/EUR_0050_back.jpg",
+      "points": [
+        {
+          "label": "Bridge",
+          "x": 0.5,
+          "y": 0.25,
+          "id": "eur-keller-b1"
+        },
+        {
+          "label": "50 (bottom right)",
+          "x": 0.68,
+          "y": 0.8,
+          "id": "eur-keller-b2"
+        }
+      ]
+    },
+    "aspect": 1.8391
+  },
+  {
+    "id": "eur-sylva",
+    "currency": "EUR",
+    "observer": "Sylva Tang",
+    "denomination": 100,
+    "label": "€100",
+    "orientation": "horizontal",
+    "quote": "100 cannot tell witch part is from, looked at the 100 first then the building, the little flags, and then the security features with different material. Flip and the composition is similar.",
+    "notes": "Couldn’t tell which side was which. No order recorded for the back (“composition is similar”).",
+    "front": {
+      "image": "/notes/EUR_0100_front.jpg",
+      "points": [
+        {
+          "label": "100",
+          "x": 0.45,
+          "y": 0.2,
+          "id": "eur-sylva-f1"
+        },
+        {
+          "label": "Building",
+          "x": 0.65,
+          "y": 0.65,
+          "id": "eur-sylva-f2"
+        },
+        {
+          "label": "Little flags",
+          "x": 0.14,
+          "y": 0.12,
+          "id": "eur-sylva-f3"
+        },
+        {
+          "label": "Security features (different material)",
+          "x": 0.9,
+          "y": 0.55,
+          "id": "eur-sylva-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/EUR_0100_back.jpg",
+      "points": []
+    },
+    "aspect": 1.9185
+  },
+  {
+    "id": "eur-rylee",
+    "currency": "EUR",
+    "observer": "Rylee Kang",
+    "denomination": 20,
+    "label": "€20",
+    "orientation": "horizontal",
+    "quote": "20 see number first, then the illustration on the background, another 20 on the left bottom side, then the illustration on the right side, flip and see number first, then the map and country, the colored illustration on the background",
+    "front": {
+      "image": "/notes/EUR_0020_front.jpg",
+      "points": [
+        {
+          "label": "20",
+          "x": 0.45,
+          "y": 0.2,
+          "id": "eur-rylee-f1"
+        },
+        {
+          "label": "Background illustration",
+          "x": 0.62,
+          "y": 0.6,
+          "id": "eur-rylee-f2"
+        },
+        {
+          "label": "20 (bottom left)",
+          "x": 0.14,
+          "y": 0.85,
+          "id": "eur-rylee-f3"
+        },
+        {
+          "label": "Illustration (right side)",
+          "x": 0.88,
+          "y": 0.55,
+          "id": "eur-rylee-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/EUR_0020_back.jpg",
+      "points": [
+        {
+          "label": "20",
+          "x": 0.65,
+          "y": 0.8,
+          "id": "eur-rylee-b1"
+        },
+        {
+          "label": "Map & countries",
+          "x": 0.3,
+          "y": 0.6,
+          "id": "eur-rylee-b2"
+        },
+        {
+          "label": "Coloured background illustration",
+          "x": 0.4,
+          "y": 0.25,
+          "id": "eur-rylee-b3"
+        }
+      ]
+    },
+    "aspect": 1.8648
+  },
+  {
+    "id": "eur-wen",
+    "currency": "EUR",
+    "observer": "Wen Jing",
+    "denomination": 5,
+    "label": "€5",
+    "orientation": "horizontal",
+    "quote": "5 Building, right side-security feature, european flag, number 5, flip it, illustration of the european, 5, and lastly negative space",
+    "front": {
+      "image": "/notes/EUR_0005_front.jpg",
+      "points": [
+        {
+          "label": "Building",
+          "x": 0.7,
+          "y": 0.5,
+          "id": "eur-wen-f1"
+        },
+        {
+          "label": "Security feature (right)",
+          "x": 0.93,
+          "y": 0.5,
+          "id": "eur-wen-f2"
+        },
+        {
+          "label": "European flag",
+          "x": 0.14,
+          "y": 0.14,
+          "id": "eur-wen-f3"
+        },
+        {
+          "label": "5",
+          "x": 0.42,
+          "y": 0.25,
+          "id": "eur-wen-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/EUR_0005_back.jpg",
+      "points": [
+        {
+          "label": "Illustration",
+          "x": 0.35,
+          "y": 0.25,
+          "id": "eur-wen-b1"
+        },
+        {
+          "label": "5",
+          "x": 0.68,
+          "y": 0.78,
+          "id": "eur-wen-b2"
+        },
+        {
+          "label": "Negative space",
+          "x": 0.88,
+          "y": 0.45,
+          "id": "eur-wen-b3"
+        }
+      ]
+    },
+    "aspect": 1.9656
+  },
+  {
+    "id": "chf-keller",
+    "currency": "CHF",
+    "observer": "Keller Wang",
+    "denomination": 20,
+    "label": "20 CHF",
+    "orientation": "vertical",
+    "grip": "Both hands, held vertically — thumb covers part of the 20",
+    "quote": "I'm holding the $20 Swiss thing. The first thing I see is the huge hand at the top, and the second is the globe at the center right. Since I'm holding it vertically with both of my hands, part of the 20 gets covered by my thumb, so that's why that was a third read. When I flip it around, it's really messy, in my opinion. The first thing I see is actually the blank space in the middle top, then the butterfly that is above that, and then the faint 20 at top left",
+    "front": {
+      "image": "/notes/CHF_0020_front.jpg",
+      "points": [
+        {
+          "label": "Hand (top)",
+          "x": 0.338,
+          "y": 0.296,
+          "id": "chf-keller-f1"
+        },
+        {
+          "label": "Globe (centre right)",
+          "x": 0.722,
+          "y": 0.544,
+          "id": "chf-keller-f2"
+        },
+        {
+          "label": "20 (partly under thumb)",
+          "x": 0.2,
+          "y": 0.85,
+          "id": "chf-keller-f3"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/CHF_0020_back.jpg",
+      "points": [
+        {
+          "label": "Blank space (middle top)",
+          "x": 0.573,
+          "y": 0.375,
+          "id": "chf-keller-b1"
+        },
+        {
+          "label": "Butterfly",
+          "x": 0.55,
+          "y": 0.12,
+          "id": "chf-keller-b2"
+        },
+        {
+          "label": "Faint 20 (top left)",
+          "x": 0.18,
+          "y": 0.1,
+          "id": "chf-keller-b3"
+        }
+      ]
+    },
+    "aspect": 0.5319
+  },
+  {
+    "id": "chf-sylva",
+    "currency": "CHF",
+    "observer": "Sylva Tang",
+    "denomination": 10,
+    "label": "10 CHF",
+    "orientation": "vertical",
+    "quote": "10 我先看到了有個數字10，然後是一個巨大的手和手下面的地球，還有左上角的十字。在背面，我看到了很多複雜的工業的圖案，以及同樣的數字10。",
+    "notes": "Translation: First I saw the number 10, then a huge hand and the globe beneath it, and the cross in the top-left corner. On the back I saw lots of complex industrial patterns, and the same number 10.",
+    "front": {
+      "image": "/notes/CHF_0010_front.jpg",
+      "points": [
+        {
+          "label": "10",
+          "x": 0.2,
+          "y": 0.84,
+          "id": "chf-sylva-f1"
+        },
+        {
+          "label": "Hand",
+          "x": 0.4,
+          "y": 0.3,
+          "id": "chf-sylva-f2"
+        },
+        {
+          "label": "Globe",
+          "x": 0.72,
+          "y": 0.6,
+          "id": "chf-sylva-f3"
+        },
+        {
+          "label": "Cross (top left)",
+          "x": 0.2,
+          "y": 0.1,
+          "id": "chf-sylva-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/CHF_0010_back.jpg",
+      "points": [
+        {
+          "label": "Industrial patterns",
+          "x": 0.5,
+          "y": 0.35,
+          "id": "chf-sylva-b1"
+        },
+        {
+          "label": "10",
+          "x": 0.15,
+          "y": 0.1,
+          "id": "chf-sylva-b2"
+        }
+      ]
+    },
+    "aspect": 0.5675
+  },
+  {
+    "id": "chf-rylee",
+    "currency": "CHF",
+    "observer": "Rylee Kang",
+    "denomination": 200,
+    "label": "200 CHF",
+    "orientation": "vertical",
+    "grip": "Vertical at first; horizontal after flipping",
+    "quote": "200 The first thing I see is the finger, the hand, and then the earth shape and the number 200 on the very bottom side. When I flip it, I see the illustration, the dramatic one, and then the number 200. That's it. You are also holding it horizontally. That's interesting. I was holding it vertically at first, and I flipped it, and it was horizontal.",
+    "front": {
+      "image": "/notes/CHF_0200_front.jpg",
+      "points": [
+        {
+          "label": "Finger / hand",
+          "x": 0.341,
+          "y": 0.321,
+          "id": "chf-rylee-f1"
+        },
+        {
+          "label": "Earth",
+          "x": 0.708,
+          "y": 0.563,
+          "id": "chf-rylee-f2"
+        },
+        {
+          "label": "200 (bottom)",
+          "x": 0.35,
+          "y": 0.85,
+          "id": "chf-rylee-f3"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/CHF_0200_back.jpg",
+      "points": [
+        {
+          "label": "Illustration",
+          "x": 0.45,
+          "y": 0.4,
+          "id": "chf-rylee-b1"
+        },
+        {
+          "label": "200",
+          "x": 0.25,
+          "y": 0.1,
+          "id": "chf-rylee-b2"
+        }
+      ]
+    },
+    "aspect": 0.4612
+  },
+  {
+    "id": "chf-wen",
+    "currency": "CHF",
+    "observer": "Wen Jing",
+    "denomination": 50,
+    "label": "50 CHF",
+    "orientation": "vertical",
+    "quote": "50 I'm looking at the vertical side first, and I look at the hand and the earth, and then I look at the 50 numbers, and then I look at the dots. It's like an illustration. I don't know what it is. Then I look at the side. It seems to be like the textures, and then I flip it over and I look at the illustration, the diagram, and I look at the words that I don't understand, and then I look at the 50 on the top-left corner.",
+    "front": {
+      "image": "/notes/CHF_0050_front.jpg",
+      "points": [
+        {
+          "label": "Hand & earth",
+          "x": 0.281,
+          "y": 0.373,
+          "id": "chf-wen-f1"
+        },
+        {
+          "label": "50",
+          "x": 0.713,
+          "y": 0.533,
+          "id": "chf-wen-f2"
+        },
+        {
+          "label": "Dots",
+          "x": 0.136,
+          "y": 0.844,
+          "id": "chf-wen-f3"
+        },
+        {
+          "label": "Side textures",
+          "x": 0.56,
+          "y": 0.853,
+          "id": "chf-wen-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/CHF_0050_back.jpg",
+      "points": [
+        {
+          "label": "Illustration / diagram",
+          "x": 0.687,
+          "y": 0.512,
+          "id": "chf-wen-b1"
+        },
+        {
+          "label": "Words",
+          "x": 0.414,
+          "y": 0.789,
+          "id": "chf-wen-b2"
+        },
+        {
+          "label": "50 (top left)",
+          "x": 0.111,
+          "y": 0.764,
+          "id": "chf-wen-b3"
+        },
+        {
+          "id": "fcbba93f",
+          "label": "Point 4",
+          "x": 0.15,
+          "y": 0.085
+        }
+      ]
+    },
+    "aspect": 0.5081
+  },
+  {
+    "id": "rub-keller",
+    "currency": "RUB",
+    "observer": "Keller Wang",
+    "denomination": 50,
+    "label": "50 ₽",
+    "orientation": "horizontal",
+    "quote": "50 All right, the first look is the sculpture in the middle. My eyes move to the 50 at top left, then to the words on the top right, and then down to the bigger words at bottom right. When I flip it over, my eye goes to the huge 50 at bottom right, then to the structure (the building in the middle), and then down to the bigger text at bottom left.",
+    "front": {
+      "image": "/notes/RUB_0050_2004_front.jpg",
+      "points": [
+        {
+          "label": "Sculpture (middle)",
+          "x": 0.508,
+          "y": 0.538,
+          "id": "rub-keller-f1"
+        },
+        {
+          "label": "50 (top left)",
+          "x": 0.305,
+          "y": 0.158,
+          "id": "rub-keller-f2"
+        },
+        {
+          "label": "Words (top right)",
+          "x": 0.8,
+          "y": 0.12,
+          "id": "rub-keller-f3"
+        },
+        {
+          "label": "Bigger words (bottom right)",
+          "x": 0.8,
+          "y": 0.85,
+          "id": "rub-keller-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/RUB_0050_2004_back.jpg",
+      "points": [
+        {
+          "label": "50 (bottom right)",
+          "x": 0.698,
+          "y": 0.691,
+          "id": "rub-keller-b1"
+        },
+        {
+          "label": "Building (middle)",
+          "x": 0.4,
+          "y": 0.3,
+          "id": "rub-keller-b2"
+        },
+        {
+          "label": "Bigger text (bottom left)",
+          "x": 0.25,
+          "y": 0.85,
+          "id": "rub-keller-b3"
+        }
+      ]
+    },
+    "aspect": 2.329
+  },
+  {
+    "id": "rub-sylva",
+    "currency": "RUB",
+    "observer": "Sylva Tang",
+    "denomination": 100,
+    "label": "100 ₽",
+    "orientation": "horizontal",
+    "quote": "100 Did the back first and then front I see the 100 at the front at first, and then I see the huge building behind the number. For the back, I also see the sculpture over in the middle and also the number 100 at the left.",
+    "notes": "Looked at the back first. What she called “front” (100 + building) is the actual back; her “back” (sculpture) is the actual front.",
+    "front": {
+      "image": "/notes/RUB_0100_2004_front.jpg",
+      "points": [
+        {
+          "label": "Sculpture (middle)",
+          "x": 0.6,
+          "y": 0.5,
+          "id": "rub-sylva-f1"
+        },
+        {
+          "label": "100 (left)",
+          "x": 0.3,
+          "y": 0.2,
+          "id": "rub-sylva-f2"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/RUB_0100_2004_back.jpg",
+      "points": [
+        {
+          "label": "100",
+          "x": 0.66,
+          "y": 0.82,
+          "id": "rub-sylva-b1"
+        },
+        {
+          "label": "Building behind the number",
+          "x": 0.4,
+          "y": 0.3,
+          "id": "rub-sylva-b2"
+        }
+      ]
+    },
+    "aspect": 2.3529
+  },
+  {
+    "id": "rub-rylee",
+    "currency": "RUB",
+    "observer": "Rylee Kang",
+    "denomination": 2000,
+    "label": "2000 ₽",
+    "orientation": "horizontal",
+    "quote": "2000 The first one I see is okay. I see: A 2000 number and the spaceship, the rocket one, in the center of the illustration. The shape of the map on the right corner side. Another number of 2000 on the very bottom, bottom right side. The negative space on the left side. When I turn around, I see: 2000 on the top right corner. The stem of the bridge on the center right side. The bridge illustration with texture on the overall background. 2000 on the left bottom side.",
+    "notes": "Looked at the back (rocket) first, then the front (bridge).",
+    "front": {
+      "image": "/notes/RUB_2000_2017_front.jpg",
+      "points": [
+        {
+          "label": "2000 (top right)",
+          "x": 0.8,
+          "y": 0.2,
+          "id": "rub-rylee-f1"
+        },
+        {
+          "label": "Bridge pylon (centre right)",
+          "x": 0.49,
+          "y": 0.546,
+          "id": "rub-rylee-f2"
+        },
+        {
+          "label": "2000 (bottom left)",
+          "x": 0.26,
+          "y": 0.84,
+          "id": "rub-rylee-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/RUB_2000_2017_back.jpg",
+      "points": [
+        {
+          "label": "2000 & rocket (centre)",
+          "x": 0.277,
+          "y": 0.146,
+          "id": "rub-rylee-b1"
+        },
+        {
+          "label": "Map shape (right)",
+          "x": 0.597,
+          "y": 0.535,
+          "id": "rub-rylee-b2"
+        },
+        {
+          "label": "2000 (bottom right)",
+          "x": 0.841,
+          "y": 0.353,
+          "id": "rub-rylee-b3"
+        },
+        {
+          "label": "Negative space (left)",
+          "x": 0.777,
+          "y": 0.818,
+          "id": "rub-rylee-b4"
+        },
+        {
+          "id": "737a75f7",
+          "label": "Point 5",
+          "x": 0.194,
+          "y": 0.539
+        }
+      ]
+    },
+    "aspect": 2.2727
+  },
+  {
+    "id": "rub-wen",
+    "currency": "RUB",
+    "observer": "Wen Jing",
+    "denomination": 200,
+    "label": "200 ₽",
+    "orientation": "horizontal",
+    "quote": "200 I look at the 200 first. It seems to have two different colors, and then I look at the words underneath it at the bottom, and then I look at the QR code in the bottom-right corner, and then I look at the security thread. I flip it over, and I see the architecture diagram. I see the background, the red-colored illustration, and then I see the serial number. I look at the $200, and I look at the negative space.",
+    "front": {
+      "image": "/notes/RUB_0200_2017_front.jpg",
+      "points": [
+        {
+          "label": "200 (two colours)",
+          "x": 0.78,
+          "y": 0.2,
+          "id": "rub-wen-f1"
+        },
+        {
+          "label": "Words underneath",
+          "x": 0.68,
+          "y": 0.88,
+          "id": "rub-wen-f2"
+        },
+        {
+          "label": "QR code (bottom right)",
+          "x": 0.93,
+          "y": 0.8,
+          "id": "rub-wen-f3"
+        },
+        {
+          "label": "Security thread",
+          "x": 0.16,
+          "y": 0.5,
+          "id": "rub-wen-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/RUB_0200_2017_back.jpg",
+      "points": [
+        {
+          "label": "Architecture",
+          "x": 0.535,
+          "y": 0.537,
+          "id": "rub-wen-b1"
+        },
+        {
+          "label": "Serial number",
+          "x": 0.824,
+          "y": 0.208,
+          "id": "rub-wen-b3"
+        },
+        {
+          "label": "200",
+          "x": 0.25,
+          "y": 0.2,
+          "id": "rub-wen-b4"
+        },
+        {
+          "label": "Negative space",
+          "x": 0.211,
+          "y": 0.557,
+          "id": "rub-wen-b5"
+        }
+      ]
+    },
+    "aspect": 2.3155
+  },
+  {
+    "id": "gbp-keller",
+    "currency": "GBP",
+    "observer": "Keller Wang",
+    "denomination": 10,
+    "label": "£10",
+    "orientation": "horizontal",
+    "quote": "10 Sure. For £10, I'm looking at: the huge Elizabeth face first the huge black dot at the left, followed by another Elizabeth face next to it on the left the Big 10 on the top right When I flip it over, I see: the huge face in the center Bank of England on the top left the huge (I'm assuming this part is actually transparency, but we didn't actually print it) transparency area at the right the £10 on the top right",
+    "front": {
+      "image": "/notes/GBP_0010_front.jpg",
+      "points": [
+        {
+          "label": "Portrait (large)",
+          "x": 0.8,
+          "y": 0.45,
+          "id": "gbp-keller-f1"
+        },
+        {
+          "label": "Black dot (left)",
+          "x": 0.242,
+          "y": 0.601,
+          "id": "gbp-keller-f2"
+        },
+        {
+          "label": "Small portrait (left)",
+          "x": 0.126,
+          "y": 0.492,
+          "id": "gbp-keller-f3"
+        },
+        {
+          "label": "Big 10 (top right)",
+          "x": 0.89,
+          "y": 0.156,
+          "id": "gbp-keller-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/GBP_0010_back.jpg",
+      "points": [
+        {
+          "label": "Face (centre)",
+          "x": 0.44,
+          "y": 0.468,
+          "id": "gbp-keller-b1"
+        },
+        {
+          "label": "Bank of England (top left)",
+          "x": 0.2,
+          "y": 0.12,
+          "id": "gbp-keller-b2"
+        },
+        {
+          "label": "Transparent window (right)",
+          "x": 0.77,
+          "y": 0.557,
+          "id": "gbp-keller-b3"
+        },
+        {
+          "label": "£10 (top right)",
+          "x": 0.9,
+          "y": 0.15,
+          "id": "gbp-keller-b4"
+        }
+      ]
+    },
+    "aspect": 1.9536
+  },
+  {
+    "id": "gbp-sylva",
+    "currency": "GBP",
+    "observer": "Sylva Tang",
+    "denomination": 5,
+    "label": "£5",
+    "orientation": "horizontal",
+    "quote": "5 I first see the face at the front and the sentence he said under the face, and I see the 5. When I turn to the back, I see the queen's face, the number 5, and also the building behind the face.",
+    "notes": "Looked at the back (Churchill) first, then the front (Queen).",
+    "front": {
+      "image": "/notes/GBP_0005_front.jpg",
+      "points": [
+        {
+          "label": "Queen’s face",
+          "x": 0.759,
+          "y": 0.58,
+          "id": "gbp-sylva-f1"
+        },
+        {
+          "label": "5",
+          "x": 0.898,
+          "y": 0.155,
+          "id": "gbp-sylva-f2"
+        },
+        {
+          "label": "Building behind the face",
+          "x": 0.515,
+          "y": 0.606,
+          "id": "gbp-sylva-f3"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/GBP_0005_back.jpg",
+      "points": [
+        {
+          "label": "Face",
+          "x": 0.475,
+          "y": 0.425,
+          "id": "gbp-sylva-b1"
+        },
+        {
+          "label": "Quote under the face",
+          "x": 0.457,
+          "y": 0.84,
+          "id": "gbp-sylva-b2"
+        },
+        {
+          "label": "5",
+          "x": 0.9,
+          "y": 0.12,
+          "id": "gbp-sylva-b3"
+        }
+      ]
+    },
+    "aspect": 1.9656
+  },
+  {
+    "id": "gbp-rylee",
+    "currency": "GBP",
+    "observer": "Rylee Kang",
+    "denomination": 50,
+    "label": "£50",
+    "orientation": "horizontal",
+    "quote": "50 The first thing I see is the queen on the right side, and then I see the number on the top-right corner, which is 50. The third read is the security form on the left side, and lastly, I see the overall illustration background of the building. I flip it. The first frame I see is the men, very centered, and then another security cord, security cord, and lastly, the word \"50 pounds\" on the bottom-left side.",
+    "front": {
+      "image": "/notes/GBP_0050_front.jpg",
+      "points": [
+        {
+          "label": "Queen (right)",
+          "x": 0.716,
+          "y": 0.491,
+          "id": "gbp-rylee-f1"
+        },
+        {
+          "label": "50 (top right)",
+          "x": 0.87,
+          "y": 0.159,
+          "id": "gbp-rylee-f2"
+        },
+        {
+          "label": "Security window (left)",
+          "x": 0.25,
+          "y": 0.511,
+          "id": "gbp-rylee-f3"
+        },
+        {
+          "label": "Building (background)",
+          "x": 0.5,
+          "y": 0.72,
+          "id": "gbp-rylee-f4"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/GBP_0050_back.jpg",
+      "points": [
+        {
+          "label": "Man (centre)",
+          "x": 0.505,
+          "y": 0.375,
+          "id": "gbp-rylee-b1"
+        },
+        {
+          "label": "Security cord",
+          "x": 0.786,
+          "y": 0.525,
+          "id": "gbp-rylee-b2"
+        },
+        {
+          "label": "“Fifty Pounds” (bottom left)",
+          "x": 0.27,
+          "y": 0.865,
+          "id": "gbp-rylee-b3"
+        }
+      ]
+    },
+    "aspect": 1.9704
+  },
+  {
+    "id": "gbp-wen",
+    "currency": "GBP",
+    "observer": "Wen Jing",
+    "denomination": 20,
+    "label": "£20",
+    "orientation": "horizontal",
+    "quote": "20 Okay, I look at the big diagram. It looks like a C, like an art frame. I look at the watermark next to it, and it's almost invisible. I look at the Bank of England and the face of this person. I look at the £20 and flip it over. There is a crown, and it seems to be a different texture. I look at the £20, the face, and the type \"Bank of England\".",
+    "front": {
+      "image": "/notes/GBP_0020_front.jpg",
+      "points": [
+        {
+          "label": "C-shaped “art frame” window",
+          "x": 0.774,
+          "y": 0.195,
+          "id": "gbp-wen-f1"
+        },
+        {
+          "label": "Watermark",
+          "x": 0.912,
+          "y": 0.123,
+          "id": "gbp-wen-f2"
+        },
+        {
+          "label": "Bank of England",
+          "x": 0.719,
+          "y": 0.5,
+          "id": "gbp-wen-f3"
+        },
+        {
+          "label": "Face",
+          "x": 0.465,
+          "y": 0.134,
+          "id": "gbp-wen-f4"
+        },
+        {
+          "label": "£20",
+          "x": 0.08,
+          "y": 0.12,
+          "id": "gbp-wen-f5"
+        }
+      ]
+    },
+    "back": {
+      "image": "/notes/GBP_0020_back.jpg",
+      "points": [
+        {
+          "label": "Crown / texture",
+          "x": 0.752,
+          "y": 0.522,
+          "id": "gbp-wen-b1"
+        },
+        {
+          "label": "£20",
+          "x": 0.873,
+          "y": 0.505,
+          "id": "gbp-wen-b2"
+        },
+        {
+          "label": "Face",
+          "x": 0.207,
+          "y": 0.119,
+          "id": "gbp-wen-b3"
+        },
+        {
+          "label": "“Bank of England”",
+          "x": 0.458,
+          "y": 0.435,
+          "id": "gbp-wen-b4"
+        }
+      ]
+    },
+    "aspect": 1.9208
+  }
+]

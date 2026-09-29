@@ -1,0 +1,2302 @@
+[
+  {
+    "id": "eur-5-front",
+    "currency": "EUR",
+    "denomination": 5,
+    "label": "€5",
+    "side": "front",
+    "source": "/uv-source/EUR/p01.jpg",
+    "image": "/notes/EUR_0005_front.jpg",
+    "aspect": 1.9656,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.002173913043478261
+        ],
+        [
+          0.9988888888888889,
+          0.002173913043478261
+        ],
+        [
+          0.9988888888888889,
+          0.9978260869565218
+        ],
+        [
+          0,
+          0.9978260869565218
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 254,
+        "pinkSaturation": 0.03,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.36,
+        "paleValue": 0.85
+      },
+      "coverage": 0.1612,
+      "savedAt": 1790647866254,
+      "photo": "/touch/eur-5-front-photo.jpg",
+      "mask": "/touch/eur-5-front.png"
+    }
+  },
+  {
+    "id": "eur-5-back",
+    "currency": "EUR",
+    "denomination": 5,
+    "label": "€5",
+    "side": "back",
+    "source": "/uv-source/EUR/p02.jpg",
+    "image": "/notes/EUR_0005_back.jpg",
+    "aspect": 1.956,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 270,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9913606911447084
+        ],
+        [
+          0,
+          0.9913606911447084
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 257,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.96
+      },
+      "coverage": 0.2732,
+      "savedAt": 1790647877571,
+      "photo": "/touch/eur-5-back-photo.jpg",
+      "mask": "/touch/eur-5-back.png"
+    }
+  },
+  {
+    "id": "eur-10-front",
+    "currency": "EUR",
+    "denomination": 10,
+    "label": "€10",
+    "side": "front",
+    "source": "/uv-source/EUR/p03.jpg",
+    "image": "/notes/EUR_0010_front.jpg",
+    "aspect": 1.9002,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.010615711252653927
+        ],
+        [
+          0.9988888888888889,
+          0.010615711252653927
+        ],
+        [
+          0.9988888888888889,
+          0.9978768577494692
+        ],
+        [
+          0,
+          0.9978768577494692
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 216,
+        "paleSaturation": 0.47,
+        "paleValue": 0.61
+      },
+      "coverage": 0.2693,
+      "savedAt": 1790647904283,
+      "photo": "/touch/eur-10-front-photo.jpg",
+      "mask": "/touch/eur-10-front.png"
+    }
+  },
+  {
+    "id": "eur-10-back",
+    "currency": "EUR",
+    "denomination": 10,
+    "label": "€10",
+    "side": "back",
+    "source": "/uv-source/EUR/p04.jpg",
+    "image": "/notes/EUR_0010_back.jpg",
+    "aspect": 1.9048,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 270,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9938144329896907
+        ],
+        [
+          0,
+          0.9938144329896907
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 251,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 216,
+        "paleSaturation": 0.46,
+        "paleValue": 0.59
+      },
+      "coverage": 0.3834,
+      "savedAt": 1790647942068,
+      "photo": "/touch/eur-10-back-photo.jpg",
+      "mask": "/touch/eur-10-back.png"
+    }
+  },
+  {
+    "id": "eur-20-front",
+    "currency": "EUR",
+    "denomination": 20,
+    "label": "€20",
+    "side": "front",
+    "source": "/uv-source/EUR/p05.jpg",
+    "image": "/notes/EUR_0020_front.jpg",
+    "aspect": 1.8648,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9979296066252588
+        ],
+        [
+          0,
+          0.9979296066252588
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 197,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2066,
+      "savedAt": 1790647946406,
+      "photo": "/touch/eur-20-front-photo.jpg",
+      "mask": "/touch/eur-20-front.png"
+    }
+  },
+  {
+    "id": "eur-20-back",
+    "currency": "EUR",
+    "denomination": 20,
+    "label": "€20",
+    "side": "back",
+    "source": "/uv-source/EUR/p06.jpg",
+    "image": "/notes/EUR_0020_back.jpg",
+    "aspect": 1.8605,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.006072874493927126
+        ],
+        [
+          0.9988888888888889,
+          0.006072874493927126
+        ],
+        [
+          0.9988888888888889,
+          0.9979757085020243
+        ],
+        [
+          0,
+          0.9979757085020243
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 198,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2075,
+      "savedAt": 1790647952362,
+      "photo": "/touch/eur-20-back-photo.jpg",
+      "mask": "/touch/eur-20-back.png"
+    }
+  },
+  {
+    "id": "eur-50-front",
+    "currency": "EUR",
+    "denomination": 50,
+    "label": "€50",
+    "side": "front",
+    "source": "/uv-source/EUR/p07.jpg",
+    "image": "/notes/EUR_0050_front.jpg",
+    "aspect": 1.8391,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.003968253968253968
+        ],
+        [
+          0.9988888888888889,
+          0.003968253968253968
+        ],
+        [
+          0.9988888888888889,
+          0.998015873015873
+        ],
+        [
+          0,
+          0.998015873015873
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 251,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 220,
+        "paleSaturation": 0.4,
+        "paleValue": 0.84
+      },
+      "coverage": 0.463,
+      "savedAt": 1790648449737,
+      "photo": "/touch/eur-50-front-photo.jpg",
+      "mask": "/touch/eur-50-front.png"
+    }
+  },
+  {
+    "id": "eur-50-back",
+    "currency": "EUR",
+    "denomination": 50,
+    "label": "€50",
+    "side": "back",
+    "source": "/uv-source/EUR/p08.jpg",
+    "image": "/notes/EUR_0050_back.jpg",
+    "aspect": 1.8307,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.010101010101010102
+        ],
+        [
+          0.9988888888888889,
+          0.010101010101010102
+        ],
+        [
+          0.9988888888888889,
+          0.997979797979798
+        ],
+        [
+          0,
+          0.997979797979798
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 252,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.61,
+        "paleValue": 0
+      },
+      "coverage": 0.3849,
+      "savedAt": 1790648007245,
+      "photo": "/touch/eur-50-back-photo.jpg",
+      "mask": "/touch/eur-50-back.png"
+    }
+  },
+  {
+    "id": "eur-100-front",
+    "currency": "EUR",
+    "denomination": 100,
+    "label": "€100",
+    "side": "front",
+    "source": "/uv-source/EUR/p09.jpg",
+    "image": "/notes/EUR_0100_front.jpg",
+    "aspect": 1.9185,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.004210526315789474
+        ],
+        [
+          0.9988888888888889,
+          0.004210526315789474
+        ],
+        [
+          0.9988888888888889,
+          0.9978947368421053
+        ],
+        [
+          0,
+          0.9978947368421053
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 199,
+        "paleSaturation": 0.42,
+        "paleValue": 0.62
+      },
+      "coverage": 0.2803,
+      "savedAt": 1790648046415,
+      "photo": "/touch/eur-100-front-photo.jpg",
+      "mask": "/touch/eur-100-front.png"
+    }
+  },
+  {
+    "id": "eur-100-back",
+    "currency": "EUR",
+    "denomination": 100,
+    "label": "€100",
+    "side": "back",
+    "source": "/uv-source/EUR/p10.jpg",
+    "image": "/notes/EUR_0100_back.jpg",
+    "aspect": 1.9324,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0.0033333333333333335,
+          0.004291845493562232
+        ],
+        [
+          0.9988888888888889,
+          0.004291845493562232
+        ],
+        [
+          0.9988888888888889,
+          0.9978540772532188
+        ],
+        [
+          0.0033333333333333335,
+          0.9978540772532188
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 153,
+        "cyanHue": 183,
+        "paleSaturation": 0.07,
+        "paleValue": 0.74
+      },
+      "coverage": 0.3217,
+      "savedAt": 1790648081889,
+      "photo": "/touch/eur-100-back-photo.jpg",
+      "mask": "/touch/eur-100-back.png"
+    }
+  },
+  {
+    "id": "eur-200-front",
+    "currency": "EUR",
+    "denomination": 200,
+    "label": "€200",
+    "side": "front",
+    "source": "/uv-source/EUR/p11.jpg",
+    "image": "/notes/EUR_0200_front.jpg",
+    "aspect": 2.0305,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.011037527593818985
+        ],
+        [
+          0.9988888888888889,
+          0.011037527593818985
+        ],
+        [
+          0.9988888888888889,
+          0.9977924944812362
+        ],
+        [
+          0,
+          0.9977924944812362
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2163,
+      "savedAt": 1790648087333,
+      "photo": "/touch/eur-200-front-photo.jpg",
+      "mask": "/touch/eur-200-front.png"
+    }
+  },
+  {
+    "id": "eur-200-back",
+    "currency": "EUR",
+    "denomination": 200,
+    "label": "€200",
+    "side": "back",
+    "source": "/uv-source/EUR/p12.jpg",
+    "image": "/notes/EUR_0200_back.jpg",
+    "aspect": 2.0408,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.006493506493506494
+        ],
+        [
+          0.9988888888888889,
+          0.006493506493506494
+        ],
+        [
+          0.9988888888888889,
+          0.9978354978354979
+        ],
+        [
+          0,
+          0.9978354978354979
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 196,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.1459,
+      "savedAt": 1790648093261,
+      "photo": "/touch/eur-200-back-photo.jpg",
+      "mask": "/touch/eur-200-back.png"
+    }
+  },
+  {
+    "id": "chf-10-front",
+    "currency": "CHF",
+    "denomination": 10,
+    "label": "10 CHF",
+    "side": "front",
+    "source": "/uv-source/CHF/p01.jpg",
+    "image": "/notes/CHF_0010_front.jpg",
+    "aspect": 0.5675,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 0,
+      "corners": [
+        [
+          0.0019342359767891683,
+          0
+        ],
+        [
+          0.9980657640232108,
+          0
+        ],
+        [
+          0.9980657640232108,
+          0.9988888888888889
+        ],
+        [
+          0.0019342359767891683,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 193,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.4583,
+      "savedAt": 1790647345781,
+      "photo": "/touch/chf-10-front-photo.jpg",
+      "mask": "/touch/chf-10-front.png"
+    }
+  },
+  {
+    "id": "chf-10-back",
+    "currency": "CHF",
+    "denomination": 10,
+    "label": "10 CHF",
+    "side": "back",
+    "source": "/uv-source/CHF/p02.jpg",
+    "image": "/notes/CHF_0010_back.jpg",
+    "aspect": 0.5675,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 180,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9980732177263969,
+          0
+        ],
+        [
+          0.9980732177263969,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 192,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.368,
+      "savedAt": 1790647345815,
+      "photo": "/touch/chf-10-back-photo.jpg",
+      "mask": "/touch/chf-10-back.png"
+    }
+  },
+  {
+    "id": "chf-20-front",
+    "currency": "CHF",
+    "denomination": 20,
+    "label": "20 CHF",
+    "side": "front",
+    "source": "/uv-source/CHF/p03.jpg",
+    "image": "/notes/CHF_0020_front.jpg",
+    "aspect": 0.5319,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 0,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.997946611909651,
+          0
+        ],
+        [
+          0.997946611909651,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 269,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2336,
+      "savedAt": 1790647345847,
+      "photo": "/touch/chf-20-front-photo.jpg",
+      "mask": "/touch/chf-20-front.png"
+    }
+  },
+  {
+    "id": "chf-20-back",
+    "currency": "CHF",
+    "denomination": 20,
+    "label": "20 CHF",
+    "side": "back",
+    "source": "/uv-source/CHF/p04.jpg",
+    "image": "/notes/CHF_0020_back.jpg",
+    "aspect": 0.535,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 180,
+      "corners": [
+        [
+          0,
+          0.008888888888888889
+        ],
+        [
+          0.9979674796747967,
+          0.008888888888888889
+        ],
+        [
+          0.9979674796747967,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 207,
+        "paleSaturation": 0.4,
+        "paleValue": 0.29
+      },
+      "coverage": 0.1775,
+      "savedAt": 1790648125776,
+      "photo": "/touch/chf-20-back-photo.jpg",
+      "mask": "/touch/chf-20-back.png"
+    }
+  },
+  {
+    "id": "chf-50-front",
+    "currency": "CHF",
+    "denomination": 50,
+    "label": "50 CHF",
+    "side": "front",
+    "source": "/uv-source/CHF/p05.jpg",
+    "image": "/notes/CHF_0050_front.jpg",
+    "aspect": 0.5081,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 0,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9978260869565218,
+          0
+        ],
+        [
+          0.9978260869565218,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 190,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.1871,
+      "savedAt": 1790647345910,
+      "photo": "/touch/chf-50-front-photo.jpg",
+      "mask": "/touch/chf-50-front.png"
+    }
+  },
+  {
+    "id": "chf-50-back",
+    "currency": "CHF",
+    "denomination": 50,
+    "label": "50 CHF",
+    "side": "back",
+    "source": "/uv-source/CHF/p06.jpg",
+    "image": "/notes/CHF_0050_back.jpg",
+    "aspect": 0.51,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 180,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9978165938864629,
+          0
+        ],
+        [
+          0.9978165938864629,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 186,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2782,
+      "savedAt": 1790647345941,
+      "photo": "/touch/chf-50-back-photo.jpg",
+      "mask": "/touch/chf-50-back.png"
+    }
+  },
+  {
+    "id": "chf-100-front",
+    "currency": "CHF",
+    "denomination": 100,
+    "label": "100 CHF",
+    "side": "front",
+    "source": "/uv-source/CHF/p07.jpg",
+    "image": "/notes/CHF_0100_front.jpg",
+    "aspect": 0.485,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 0,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9976470588235294,
+          0
+        ],
+        [
+          0.9976470588235294,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 220,
+        "paleSaturation": 0.62,
+        "paleValue": 0.4
+      },
+      "coverage": 0.2848,
+      "savedAt": 1790648143688,
+      "photo": "/touch/chf-100-front-photo.jpg",
+      "mask": "/touch/chf-100-front.png"
+    }
+  },
+  {
+    "id": "chf-100-back",
+    "currency": "CHF",
+    "denomination": 100,
+    "label": "100 CHF",
+    "side": "back",
+    "source": "/uv-source/CHF/p08.jpg",
+    "image": "/notes/CHF_0100_back.jpg",
+    "aspect": 0.4863,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 180,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9977011494252873,
+          0
+        ],
+        [
+          0.9977011494252873,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 217,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3933,
+      "savedAt": 1790648151776,
+      "photo": "/touch/chf-100-back-photo.jpg",
+      "mask": "/touch/chf-100-back.png"
+    }
+  },
+  {
+    "id": "chf-200-front",
+    "currency": "CHF",
+    "denomination": 200,
+    "label": "200 CHF",
+    "side": "front",
+    "source": "/uv-source/CHF/p09.jpg",
+    "image": "/notes/CHF_0200_front.jpg",
+    "aspect": 0.4612,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 0,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9975124378109452,
+          0
+        ],
+        [
+          0.9975124378109452,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 208,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.4335,
+      "savedAt": 1790648158344,
+      "photo": "/touch/chf-200-front-photo.jpg",
+      "mask": "/touch/chf-200-front.png"
+    }
+  },
+  {
+    "id": "chf-200-back",
+    "currency": "CHF",
+    "denomination": 200,
+    "label": "200 CHF",
+    "side": "back",
+    "source": "/uv-source/CHF/p10.jpg",
+    "image": "/notes/CHF_0200_back.jpg",
+    "aspect": 0.4637,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 180,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9975124378109452,
+          0
+        ],
+        [
+          0.9975124378109452,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 205,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.4424,
+      "savedAt": 1790648164227,
+      "photo": "/touch/chf-200-back-photo.jpg",
+      "mask": "/touch/chf-200-back.png"
+    }
+  },
+  {
+    "id": "chf-1000-front",
+    "currency": "CHF",
+    "denomination": 1000,
+    "label": "1000 CHF",
+    "side": "front",
+    "source": "/uv-source/CHF/p11.jpg",
+    "image": "/notes/CHF_1000_front.jpg",
+    "aspect": 0.4422,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 0,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9975490196078431,
+          0
+        ],
+        [
+          0.9975490196078431,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 262,
+        "pinkSaturation": 0.1,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 212,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.1402,
+      "savedAt": 1790648189143,
+      "photo": "/touch/chf-1000-front-photo.jpg",
+      "mask": "/touch/chf-1000-front.png"
+    }
+  },
+  {
+    "id": "chf-1000-back",
+    "currency": "CHF",
+    "denomination": 1000,
+    "label": "1000 CHF",
+    "side": "back",
+    "source": "/uv-source/CHF/p12.jpg",
+    "image": "/notes/CHF_1000_back.jpg",
+    "aspect": 0.4433,
+    "orientation": "vertical",
+    "extraction": {
+      "rotation": 180,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9975124378109452,
+          0
+        ],
+        [
+          0.9975124378109452,
+          0.9988888888888889
+        ],
+        [
+          0,
+          0.9988888888888889
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 252,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.1227,
+      "savedAt": 1790647346119,
+      "photo": "/touch/chf-1000-back-photo.jpg",
+      "mask": "/touch/chf-1000-back.png"
+    }
+  },
+  {
+    "id": "rub-5-front",
+    "currency": "RUB",
+    "denomination": 5,
+    "label": "5 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p01.jpg",
+    "image": "/notes/RUB_0005_1997_front.jpg",
+    "aspect": 2.2567,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.012437810945273632
+        ],
+        [
+          0.9988888888888889,
+          0.012437810945273632
+        ],
+        [
+          0.9988888888888889,
+          0.9975124378109452
+        ],
+        [
+          0,
+          0.9975124378109452
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 193,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.1643,
+      "savedAt": 1790647346147,
+      "photo": "/touch/rub-5-front-photo.jpg",
+      "mask": "/touch/rub-5-front.png"
+    }
+  },
+  {
+    "id": "rub-5-back",
+    "currency": "RUB",
+    "denomination": 5,
+    "label": "5 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p02.jpg",
+    "image": "/notes/RUB_0005_1997_back.jpg",
+    "aspect": 2.2567,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9975124378109452
+        ],
+        [
+          0,
+          0.9975124378109452
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 208,
+        "cyanHue": 205,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3017,
+      "savedAt": 1790648214279,
+      "photo": "/touch/rub-5-back-photo.jpg",
+      "mask": "/touch/rub-5-back.png"
+    }
+  },
+  {
+    "id": "rub-10-front",
+    "currency": "RUB",
+    "denomination": 10,
+    "label": "10 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p03.jpg",
+    "image": "/notes/RUB_0010_2004_front.jpg",
+    "aspect": 2.3222,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.015037593984962405
+        ],
+        [
+          0.9988888888888889,
+          0.015037593984962405
+        ],
+        [
+          0.9988888888888889,
+          0.9974937343358395
+        ],
+        [
+          0,
+          0.9974937343358395
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 216,
+        "paleSaturation": 0.4,
+        "paleValue": 0.25
+      },
+      "coverage": 0.4333,
+      "savedAt": 1790648234428,
+      "photo": "/touch/rub-10-front-photo.jpg",
+      "mask": "/touch/rub-10-front.png"
+    }
+  },
+  {
+    "id": "rub-10-back",
+    "currency": "RUB",
+    "denomination": 10,
+    "label": "10 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p04.jpg",
+    "image": "/notes/RUB_0010_2004_back.jpg",
+    "aspect": 2.3022,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.012531328320802004
+        ],
+        [
+          0.9988888888888889,
+          0.012531328320802004
+        ],
+        [
+          0.9988888888888889,
+          0.9974937343358395
+        ],
+        [
+          0,
+          0.9974937343358395
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 195,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3837,
+      "savedAt": 1790648242615,
+      "photo": "/touch/rub-10-back-photo.jpg",
+      "mask": "/touch/rub-10-back.png"
+    }
+  },
+  {
+    "id": "rub-50-front",
+    "currency": "RUB",
+    "denomination": 50,
+    "label": "50 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p05.jpg",
+    "image": "/notes/RUB_0050_2004_front.jpg",
+    "aspect": 2.329,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.020151133501259445
+        ],
+        [
+          0.9988888888888889,
+          0.020151133501259445
+        ],
+        [
+          0.9988888888888889,
+          0.9974811083123426
+        ],
+        [
+          0,
+          0.9974811083123426
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 198,
+        "paleSaturation": 0.44,
+        "paleValue": 0.48
+      },
+      "coverage": 0.2627,
+      "savedAt": 1790648255594,
+      "photo": "/touch/rub-50-front-photo.jpg",
+      "mask": "/touch/rub-50-front.png"
+    }
+  },
+  {
+    "id": "rub-50-back",
+    "currency": "RUB",
+    "denomination": 50,
+    "label": "50 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p06.jpg",
+    "image": "/notes/RUB_0050_2004_back.jpg",
+    "aspect": 2.346,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9974747474747475
+        ],
+        [
+          0,
+          0.9974747474747475
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 209,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.6254,
+      "savedAt": 1790648264094,
+      "photo": "/touch/rub-50-back-photo.jpg",
+      "mask": "/touch/rub-50-back.png"
+    }
+  },
+  {
+    "id": "rub-100-front",
+    "currency": "RUB",
+    "denomination": 100,
+    "label": "100 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p07.jpg",
+    "image": "/notes/RUB_0100_2004_front.jpg",
+    "aspect": 2.3529,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.020151133501259445
+        ],
+        [
+          0.9988888888888889,
+          0.020151133501259445
+        ],
+        [
+          0.9988888888888889,
+          0.9974811083123426
+        ],
+        [
+          0,
+          0.9974811083123426
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.4153,
+      "savedAt": 1790647346354,
+      "photo": "/touch/rub-100-front-photo.jpg",
+      "mask": "/touch/rub-100-front.png"
+    }
+  },
+  {
+    "id": "rub-100-back",
+    "currency": "RUB",
+    "denomination": 100,
+    "label": "100 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p08.jpg",
+    "image": "/notes/RUB_0100_2004_back.jpg",
+    "aspect": 2.3426,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9974937343358395
+        ],
+        [
+          0,
+          0.9974937343358395
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 258,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3391,
+      "savedAt": 1790647346382,
+      "photo": "/touch/rub-100-back-photo.jpg",
+      "mask": "/touch/rub-100-back.png"
+    }
+  },
+  {
+    "id": "rub-200-front",
+    "currency": "RUB",
+    "denomination": 200,
+    "label": "200 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p10.jpg",
+    "image": "/notes/RUB_0200_2017_front.jpg",
+    "aspect": 2.3155,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.007556675062972292
+        ],
+        [
+          0.9988888888888889,
+          0.007556675062972292
+        ],
+        [
+          0.9988888888888889,
+          0.9974811083123426
+        ],
+        [
+          0,
+          0.9974811083123426
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 197,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2397,
+      "savedAt": 1790647346412,
+      "photo": "/touch/rub-200-front-photo.jpg",
+      "mask": "/touch/rub-200-front.png"
+    }
+  },
+  {
+    "id": "rub-200-back",
+    "currency": "RUB",
+    "denomination": 200,
+    "label": "200 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p09.jpg",
+    "image": "/notes/RUB_0200_2017_back.jpg",
+    "aspect": 2.3155,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9973118279569892
+        ],
+        [
+          0,
+          0.9973118279569892
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 197,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2958,
+      "savedAt": 1790647346437,
+      "photo": "/touch/rub-200-back-photo.jpg",
+      "mask": "/touch/rub-200-back.png"
+    }
+  },
+  {
+    "id": "rub-500-front",
+    "currency": "RUB",
+    "denomination": 500,
+    "label": "500 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p11.jpg",
+    "image": "/notes/RUB_0500_2010_front.jpg",
+    "aspect": 2.3599,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.010025062656641603
+        ],
+        [
+          0.9988888888888889,
+          0.010025062656641603
+        ],
+        [
+          0.9988888888888889,
+          0.9974937343358395
+        ],
+        [
+          0,
+          0.9974937343358395
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 214,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3893,
+      "savedAt": 1790648280733,
+      "photo": "/touch/rub-500-front-photo.jpg",
+      "mask": "/touch/rub-500-front.png"
+    }
+  },
+  {
+    "id": "rub-500-back",
+    "currency": "RUB",
+    "denomination": 500,
+    "label": "500 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p12.jpg",
+    "image": "/notes/RUB_0500_2010_back.jpg",
+    "aspect": 2.3564,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9973753280839895
+        ],
+        [
+          0,
+          0.9973753280839895
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 221,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.6171,
+      "savedAt": 1790648289609,
+      "photo": "/touch/rub-500-back-photo.jpg",
+      "mask": "/touch/rub-500-back.png"
+    }
+  },
+  {
+    "id": "rub-1000-front",
+    "currency": "RUB",
+    "denomination": 1000,
+    "label": "1000 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p13.jpg",
+    "image": "/notes/RUB_1000_2010_front.jpg",
+    "aspect": 2.2792,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.010309278350515464
+        ],
+        [
+          0.9988888888888889,
+          0.010309278350515464
+        ],
+        [
+          0.9988888888888889,
+          0.9974226804123711
+        ],
+        [
+          0,
+          0.9974226804123711
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 198,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.1687,
+      "savedAt": 1790647346517,
+      "photo": "/touch/rub-1000-front-photo.jpg",
+      "mask": "/touch/rub-1000-front.png"
+    }
+  },
+  {
+    "id": "rub-1000-back",
+    "currency": "RUB",
+    "denomination": 1000,
+    "label": "1000 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p14.jpg",
+    "image": "/notes/RUB_1000_2010_back.jpg",
+    "aspect": 2.2825,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.017412935323383085
+        ],
+        [
+          0.9988888888888889,
+          0.017412935323383085
+        ],
+        [
+          0.9988888888888889,
+          0.9975124378109452
+        ],
+        [
+          0,
+          0.9975124378109452
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 251,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 215,
+        "paleSaturation": 0.4,
+        "paleValue": 0.2
+      },
+      "coverage": 0.388,
+      "savedAt": 1790648306141,
+      "photo": "/touch/rub-1000-back-photo.jpg",
+      "mask": "/touch/rub-1000-back.png"
+    }
+  },
+  {
+    "id": "rub-2000-front",
+    "currency": "RUB",
+    "denomination": 2000,
+    "label": "2000 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p16.jpg",
+    "image": "/notes/RUB_2000_2017_front.jpg",
+    "aspect": 2.2727,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.002544529262086514
+        ],
+        [
+          0.9988888888888889,
+          0.002544529262086514
+        ],
+        [
+          0.9988888888888889,
+          0.9974554707379135
+        ],
+        [
+          0,
+          0.9974554707379135
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2289,
+      "savedAt": 1790647346571,
+      "photo": "/touch/rub-2000-front-photo.jpg",
+      "mask": "/touch/rub-2000-front.png"
+    }
+  },
+  {
+    "id": "rub-2000-back",
+    "currency": "RUB",
+    "denomination": 2000,
+    "label": "2000 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p15.jpg",
+    "image": "/notes/RUB_2000_2017_back.jpg",
+    "aspect": 2.2727,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0.0033333333333333335,
+          0.002506265664160401
+        ],
+        [
+          0.9988888888888889,
+          0.002506265664160401
+        ],
+        [
+          0.9988888888888889,
+          0.9974937343358395
+        ],
+        [
+          0.0033333333333333335,
+          0.9974937343358395
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 198,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3106,
+      "savedAt": 1790647346599,
+      "photo": "/touch/rub-2000-back-photo.jpg",
+      "mask": "/touch/rub-2000-back.png"
+    }
+  },
+  {
+    "id": "rub-5000-front",
+    "currency": "RUB",
+    "denomination": 5000,
+    "label": "5000 ₽",
+    "side": "front",
+    "source": "/uv-source/RUB/p17.jpg",
+    "image": "/notes/RUB_5000_2010_front.jpg",
+    "aspect": 2.2989,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9974747474747475
+        ],
+        [
+          0,
+          0.9974747474747475
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 259,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 216,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3336,
+      "savedAt": 1790648317992,
+      "photo": "/touch/rub-5000-front-photo.jpg",
+      "mask": "/touch/rub-5000-front.png"
+    }
+  },
+  {
+    "id": "rub-5000-back",
+    "currency": "RUB",
+    "denomination": 5000,
+    "label": "5000 ₽",
+    "side": "back",
+    "source": "/uv-source/RUB/p18.jpg",
+    "image": "/notes/RUB_5000_2010_back.jpg",
+    "aspect": 2.2989,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.010101010101010102
+        ],
+        [
+          0.9988888888888889,
+          0.010101010101010102
+        ],
+        [
+          0.9988888888888889,
+          0.9974747474747475
+        ],
+        [
+          0,
+          0.9974747474747475
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 266,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 215,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.4069,
+      "savedAt": 1790648324382,
+      "photo": "/touch/rub-5000-back-photo.jpg",
+      "mask": "/touch/rub-5000-back.png"
+    }
+  },
+  {
+    "id": "gbp-5-front",
+    "currency": "GBP",
+    "denomination": 5,
+    "label": "£5",
+    "side": "front",
+    "source": "/uv-source/GBP/p01.jpg",
+    "image": "/notes/GBP_0005_front.jpg",
+    "aspect": 1.9656,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.006711409395973154
+        ],
+        [
+          0.9988888888888889,
+          0.006711409395973154
+        ],
+        [
+          0.9988888888888889,
+          0.9977628635346756
+        ],
+        [
+          0,
+          0.9977628635346756
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2538,
+      "savedAt": 1790647346688,
+      "photo": "/touch/gbp-5-front-photo.jpg",
+      "mask": "/touch/gbp-5-front.png"
+    }
+  },
+  {
+    "id": "gbp-5-back",
+    "currency": "GBP",
+    "denomination": 5,
+    "label": "£5",
+    "side": "back",
+    "source": "/uv-source/GBP/p02.jpg",
+    "image": "/notes/GBP_0005_back.jpg",
+    "aspect": 1.956,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9977628635346756
+        ],
+        [
+          0,
+          0.9977628635346756
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 250,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 192,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.337,
+      "savedAt": 1790647346717,
+      "photo": "/touch/gbp-5-back-photo.jpg",
+      "mask": "/touch/gbp-5-back.png"
+    }
+  },
+  {
+    "id": "gbp-10-front",
+    "currency": "GBP",
+    "denomination": 10,
+    "label": "£10",
+    "side": "front",
+    "source": "/uv-source/GBP/p03.jpg",
+    "image": "/notes/GBP_0010_front.jpg",
+    "aspect": 1.9536,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0.0077777777777777776,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9978213507625272
+        ],
+        [
+          0.0077777777777777776,
+          0.9978213507625272
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2833,
+      "savedAt": 1790647346746,
+      "photo": "/touch/gbp-10-front-photo.jpg",
+      "mask": "/touch/gbp-10-front.png"
+    }
+  },
+  {
+    "id": "gbp-10-back",
+    "currency": "GBP",
+    "denomination": 10,
+    "label": "£10",
+    "side": "back",
+    "source": "/uv-source/GBP/p04.jpg",
+    "image": "/notes/GBP_0010_back.jpg",
+    "aspect": 1.9656,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0.0033333333333333335,
+          0.002145922746781116
+        ],
+        [
+          0.9988888888888889,
+          0.002145922746781116
+        ],
+        [
+          0.9988888888888889,
+          0.9978540772532188
+        ],
+        [
+          0.0033333333333333335,
+          0.9978540772532188
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 254,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 214,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3568,
+      "savedAt": 1790648351066,
+      "photo": "/touch/gbp-10-back-photo.jpg",
+      "mask": "/touch/gbp-10-back.png"
+    }
+  },
+  {
+    "id": "gbp-20-front",
+    "currency": "GBP",
+    "denomination": 20,
+    "label": "£20",
+    "side": "front",
+    "source": "/uv-source/GBP/p05.jpg",
+    "image": "/notes/GBP_0020_front.jpg",
+    "aspect": 1.9208,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0,
+          0.010775862068965518
+        ],
+        [
+          0.9988888888888889,
+          0.010775862068965518
+        ],
+        [
+          0.9988888888888889,
+          0.9978448275862069
+        ],
+        [
+          0,
+          0.9978448275862069
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 259,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2025,
+      "savedAt": 1790647346808,
+      "photo": "/touch/gbp-20-front-photo.jpg",
+      "mask": "/touch/gbp-20-front.png"
+    }
+  },
+  {
+    "id": "gbp-20-back",
+    "currency": "GBP",
+    "denomination": 20,
+    "label": "£20",
+    "side": "back",
+    "source": "/uv-source/GBP/p06.jpg",
+    "image": "/notes/GBP_0020_back.jpg",
+    "aspect": 1.9488,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0.0044444444444444444,
+          0.0042643923240938165
+        ],
+        [
+          0.9988888888888889,
+          0.0042643923240938165
+        ],
+        [
+          0.9988888888888889,
+          0.997867803837953
+        ],
+        [
+          0.0044444444444444444,
+          0.997867803837953
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 257,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 212,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.2657,
+      "savedAt": 1790648359727,
+      "photo": "/touch/gbp-20-back-photo.jpg",
+      "mask": "/touch/gbp-20-back.png"
+    }
+  },
+  {
+    "id": "gbp-50-front",
+    "currency": "GBP",
+    "denomination": 50,
+    "label": "£50",
+    "side": "front",
+    "source": "/uv-source/GBP/p07.jpg",
+    "image": "/notes/GBP_0050_front.jpg",
+    "aspect": 1.9704,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0.0077777777777777776,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0
+        ],
+        [
+          0.9988888888888889,
+          0.9978540772532188
+        ],
+        [
+          0.0077777777777777776,
+          0.9978540772532188
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 255,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.1974,
+      "savedAt": 1790647346869,
+      "photo": "/touch/gbp-50-front-photo.jpg",
+      "mask": "/touch/gbp-50-front.png"
+    }
+  },
+  {
+    "id": "gbp-50-back",
+    "currency": "GBP",
+    "denomination": 50,
+    "label": "£50",
+    "side": "back",
+    "source": "/uv-source/GBP/p08.jpg",
+    "image": "/notes/GBP_0050_back.jpg",
+    "aspect": 1.907,
+    "orientation": "horizontal",
+    "extraction": {
+      "rotation": 90,
+      "corners": [
+        [
+          0.0033333333333333335,
+          0.010460251046025104
+        ],
+        [
+          0.9988888888888889,
+          0.010460251046025104
+        ],
+        [
+          0.9988888888888889,
+          0.997907949790795
+        ],
+        [
+          0.0033333333333333335,
+          0.997907949790795
+        ]
+      ],
+      "ink": {
+        "minValue": 0.3,
+        "pinkHue": 258,
+        "pinkSaturation": 0.25,
+        "greenSaturation": 0.3,
+        "greenHue": 170,
+        "cyanHue": 200,
+        "paleSaturation": 0.4,
+        "paleValue": 0.6
+      },
+      "coverage": 0.3179,
+      "savedAt": 1790648365647,
+      "photo": "/touch/gbp-50-back-photo.jpg",
+      "mask": "/touch/gbp-50-back.png"
+    }
+  }
+]
