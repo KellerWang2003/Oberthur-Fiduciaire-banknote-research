@@ -13,9 +13,16 @@ type Props = {
   onHighlight: (id: string | null) => void
   onPointsChange: (side: Side, points: FlowPoint[]) => void
   onSelect?: () => void
-  onFlip: () => void
+  /** Omit when a shared button flips a group of notes (All notes layout) */
+  onFlip?: () => void
   /** Black-and-white artwork */
   mono?: boolean
+  /** Extra layer per side between the artwork and the flow */
+  underlay?: (side: Side) => React.ReactNode
+  /** Shown between the caption and the note, e.g. the UV photo */
+  above?: React.ReactNode
+  /** Replaces the observer name in the caption */
+  subtitle?: string
   ref?: React.Ref<HTMLDivElement>
 }
 
@@ -35,6 +42,9 @@ export function NoteStage({
   onSelect,
   onFlip,
   mono = false,
+  underlay,
+  above,
+  subtitle,
   ref,
 }: Props) {
   const flipped = side === 'back'
@@ -43,6 +53,7 @@ export function NoteStage({
   const faceProps = (s: Side) => ({
     image: note[s].image,
     mono,
+    underlay: underlay?.(s),
     alt: `${note.label} ${s}`,
     points: note[s].points,
     // In the grid only the selected note is editable; clicking the others selects them.
@@ -58,12 +69,13 @@ export function NoteStage({
       {caption && (
         <div className="flex items-baseline gap-3 text-2xl">
           <span className="font-semibold">{note.label}</span>
-          <span className="text-muted-foreground">{note.observer}</span>
+          <span className="text-muted-foreground">{subtitle ?? note.observer}</span>
           <span className="ml-auto text-base tracking-wide text-muted-foreground uppercase">
             {side}
           </span>
         </div>
       )}
+      {above}
       <div
         className={cn(
           'relative rounded-xl perspective-[2400px]',
@@ -96,7 +108,7 @@ export function NoteStage({
           </div>
         </div>
       </div>
-      <FlipButton side={side} onClick={onFlip} />
+      {onFlip && <FlipButton side={side} onClick={onFlip} />}
     </div>
   )
 }

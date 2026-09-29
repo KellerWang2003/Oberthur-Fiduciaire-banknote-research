@@ -1,4 +1,4 @@
-import { useId, useRef } from 'react'
+import { useId, useRef, type ReactNode } from 'react'
 import { orderColor, orderOpacity } from '@/lib/order'
 import { cn } from '@/lib/utils'
 import type { FlowPoint } from '@/data/types'
@@ -19,6 +19,8 @@ type Props = {
   tag?: string
   /** Black-and-white artwork, so only the flow carries colour */
   mono?: boolean
+  /** Drawn between the artwork and the flow, e.g. a touch heatmap */
+  underlay?: ReactNode
 }
 
 const clamp = (v: number) => Math.min(1, Math.max(0, v))
@@ -42,6 +44,7 @@ export function BanknoteFace({
   muted = false,
   tag,
   mono = false,
+  underlay,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const dragging = useRef<string | null>(null)
@@ -87,6 +90,8 @@ export function BanknoteFace({
           )}
         />
       )}
+
+      {underlay}
 
       {/* Clicks pass through this layer to the face so edit mode can add points; markers opt back in. */}
       <div

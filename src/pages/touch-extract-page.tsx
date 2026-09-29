@@ -294,10 +294,10 @@ export function TouchExtractPage() {
       <aside className="flex w-60 shrink-0 flex-col border-r">
         <div className="p-3">
           <a
-            href="#/touch"
+            href="#/"
             className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
           >
-            <ArrowLeft className="size-3" /> Touch Heatmap
+            <ArrowLeft className="size-3" /> Back to the study
           </a>
           <h1 className="mt-2 text-sm font-semibold">Extract touch areas</h1>
           <p className="text-xs text-muted-foreground">

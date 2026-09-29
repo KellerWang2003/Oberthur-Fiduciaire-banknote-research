@@ -20,6 +20,11 @@ type Props = {
   onFlip: () => void
   /** Fully black-and-white artwork (otherwise lightly desaturated) */
   mono?: boolean
+  /** Extra layer per side between the stacked artwork and the flows */
+  underlay?: (side: Side) => React.ReactNode
+  /** Shown between the caption and the stack, e.g. a row of UV photos */
+  above?: React.ReactNode
+  title?: string
   ref?: React.Ref<HTMLDivElement>
 }
 
@@ -44,6 +49,9 @@ export function OverlayStage({
   onPointsChange,
   onFlip,
   mono = false,
+  underlay,
+  above,
+  title,
   ref,
 }: Props) {
   // Notes of one currency differ slightly in proportion; stretch them to a shared frame.
@@ -76,6 +84,7 @@ export function OverlayStage({
           )}
         />
       ))}
+      {underlay?.(s)}
       {mode === 'heatmap' && <HeatmapLayer notes={notes} side={s} aspect={aspect} />}
       {mode === 'flow' &&
         ordered.map((n) => {
@@ -101,12 +110,13 @@ export function OverlayStage({
   return (
     <div ref={ref} className="flex flex-col gap-4" style={{ width }}>
       <div className="flex items-baseline gap-3 text-2xl">
-        <span className="font-semibold">{mode === 'heatmap' ? 'Heatmap' : 'Overlay'}</span>
+        <span className="font-semibold">{title ?? (mode === 'heatmap' ? 'Heatmap' : 'Overlay')}</span>
         <span className="text-muted-foreground">{notes.length} notes</span>
         <span className="ml-auto text-base tracking-wide text-muted-foreground uppercase">
           {side}
         </span>
       </div>
+      {above}
       <div className="relative perspective-[2400px]" style={{ aspectRatio: aspect }}>
         <div
           className={cn(
