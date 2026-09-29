@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { FlowPage } from '@/pages/flow-page'
 import { TouchExtractPage } from '@/pages/touch-extract-page'
 import { TouchPage } from '@/pages/touch-page'
@@ -15,9 +16,20 @@ function useHashRoute() {
   return hash.replace(/^#/, '').split('?')[0]
 }
 
-export default function App() {
-  const route = useHashRoute()
+function Page({ route }: { route: string }) {
   if (route === '/touch/extract' && import.meta.env.DEV) return <TouchExtractPage />
   if (route.startsWith('/touch')) return <TouchPage />
   return <FlowPage />
+}
+
+export default function App() {
+  const route = useHashRoute()
+  // Pages live in the hash, which Vercel can't see; report them as paths so each study counts separately.
+  const page = route.startsWith('/touch') ? '/touch' : '/'
+  return (
+    <>
+      <Page route={route} />
+      <Analytics route={page} path={page} />
+    </>
+  )
 }
