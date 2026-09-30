@@ -11,7 +11,7 @@ export function ColumnResizer(props: ReturnType<typeof useColumnWidth>['handlePr
       aria-orientation="vertical"
       aria-label="Resize panels"
       title="Drag to resize · double-click to reset"
-      className="group pointer-events-auto absolute top-4 -right-1 bottom-4 flex w-3 cursor-col-resize touch-none justify-center"
+      className="group pointer-events-auto absolute inset-y-0 -right-1.5 flex w-3 cursor-col-resize touch-none justify-center"
       {...props}
       onPointerDown={(e) => {
         setActive(true)

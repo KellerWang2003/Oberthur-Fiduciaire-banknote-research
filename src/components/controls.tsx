@@ -3,16 +3,7 @@ import type { LucideIcon } from 'lucide-react'
 import { Switch } from '@/components/ui/switch'
 import { cn } from '@/lib/utils'
 
-/** A card in the left column; its sections are divided by thin lines */
-export function ControlCard({ children }: { children: ReactNode }) {
-  return (
-    <div className="pointer-events-auto flex flex-col divide-y rounded-xl border bg-background/95 shadow-sm backdrop-blur">
-      {children}
-    </div>
-  )
-}
-
-/** One labelled group of controls inside a ControlCard */
+/** One labelled group of controls in the sidebar */
 export function ControlSection({
   title,
   shortcut,
@@ -23,8 +14,8 @@ export function ControlSection({
   children: ReactNode
 }) {
   return (
-    <section className="flex flex-col gap-0.5 p-1.5">
-      <h2 className="px-2 pt-1 pb-1 text-[11px] font-medium tracking-wider text-muted-foreground uppercase">
+    <section className="flex flex-col p-1.5">
+      <h2 className="px-2 pt-1 pb-0.5 text-[10px] font-medium tracking-wider text-muted-foreground/80 uppercase">
         {title}
         {shortcut && (
           <span className="font-normal tracking-normal normal-case opacity-70"> · {shortcut}</span>
@@ -36,8 +27,9 @@ export function ControlSection({
 }
 
 /**
- * A primary data layer (eye flow, touch): one prominent switch row, with its own options
- * tucked underneath only while the layer is on.
+ * A primary data layer (eye flow, touch), drawn as a tile so it outranks everything else in the
+ * sidebar. The icon chip carries the layer's colour and, while on, the tile takes a flat, slight tint
+ * of it and holds the layer's options.
  */
 export function LayerToggle({
   icon: Icon,
@@ -45,6 +37,7 @@ export function LayerToggle({
   description,
   shortcut,
   swatch,
+  tint,
   checked,
   onChange,
   children,
@@ -55,44 +48,51 @@ export function LayerToggle({
   shortcut?: string
   /** CSS background for the icon chip, echoing the layer's colour scale */
   swatch: string
+  /** Flat, slight background colour for the tile while the layer is on */
+  tint: string
   checked: boolean
   onChange: (value: boolean) => void
   children?: ReactNode
 }) {
   return (
-    <section className="flex flex-col p-1.5">
+    <section
+      className={cn(
+        'flex flex-col rounded-xl border transition-colors',
+        checked ? 'border-foreground/10 shadow-sm' : 'border-dashed bg-transparent',
+      )}
+      style={checked ? { backgroundColor: tint } : undefined}
+    >
       <label
         title={shortcut ? `${title} (${shortcut})` : title}
-        className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 transition-colors hover:bg-muted/60"
+        className="flex cursor-pointer items-center gap-3 p-3"
       >
         <span
           className={cn(
-            'flex size-8 shrink-0 items-center justify-center rounded-lg transition-all [&_svg]:size-4',
+            'flex size-10 shrink-0 items-center justify-center rounded-lg transition-all [&_svg]:size-5',
             checked ? 'text-white shadow-sm' : 'bg-muted text-muted-foreground',
           )}
           style={checked ? { backgroundImage: swatch } : undefined}
         >
           <Icon />
         </span>
-        <span className="flex min-w-0 flex-1 flex-col">
+        <span className="flex min-w-0 flex-1 flex-col gap-0.5">
           <span
             className={cn(
-              'text-sm font-semibold',
+              'text-[15px] leading-tight font-semibold',
               checked ? 'text-foreground' : 'text-muted-foreground',
             )}
           >
             {title}
-            {shortcut && (
-              <span className="ml-1.5 text-[11px] font-normal text-muted-foreground">
-                {shortcut}
-              </span>
-            )}
           </span>
-          <span className="truncate text-xs text-muted-foreground">{description}</span>
+          <span className="text-xs leading-snug text-muted-foreground">
+            {checked ? description : 'Hidden'}
+          </span>
         </span>
         <Switch checked={checked} onCheckedChange={onChange} />
       </label>
-      {checked && children && <div className="flex flex-col gap-1 pt-1 pb-0.5">{children}</div>}
+      {checked && children && (
+        <div className="flex flex-col gap-2 px-3 pb-3 [&_[role=radiogroup]]:mx-0">{children}</div>
+      )}
     </section>
   )
 }
@@ -173,11 +173,11 @@ export function ToggleRow({
     <label
       title={hint}
       className={cn(
-        'flex items-center gap-2 px-2 py-1 text-sm whitespace-nowrap',
+        'flex items-center gap-2 px-2 py-1 text-[13px] whitespace-nowrap',
         disabled && 'text-muted-foreground',
       )}
     >
-      <Switch checked={checked} onCheckedChange={onChange} disabled={disabled} />
+      <Switch size="sm" checked={checked} onCheckedChange={onChange} disabled={disabled} />
       {label}
     </label>
   )
@@ -201,7 +201,11 @@ export function Segmented<T extends string>({
     <div
       role="radiogroup"
       aria-label={label}
-      className={cn('mx-1 flex rounded-md bg-muted p-0.5', disabled && 'opacity-50')}
+      // White track with a dark active option, so it reads on any tile tint (matches the layout switch).
+      className={cn(
+        'mx-1 flex rounded-lg border bg-background p-0.5 shadow-xs',
+        disabled && 'opacity-50',
+      )}
     >
       {options.map((o) => {
         const active = o.value === value
@@ -214,10 +218,10 @@ export function Segmented<T extends string>({
             disabled={disabled}
             onClick={() => onChange(o.value)}
             className={cn(
-              'flex-1 rounded-[5px] px-2 py-1 text-xs transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
+              'flex-1 rounded-md px-2 py-1.5 text-xs font-medium transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50',
               active
-                ? 'bg-background font-medium text-foreground shadow-sm'
-                : 'text-muted-foreground hover:text-foreground',
+                ? 'bg-primary text-primary-foreground shadow-sm'
+                : 'text-muted-foreground hover:bg-muted hover:text-foreground',
             )}
           >
             {o.label}

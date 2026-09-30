@@ -16,19 +16,21 @@ npm run dev
 - **All notes:** every denomination of the currency side by side, with one button to flip them all.
 - **Combined:** all denominations stacked in one frame.
 
-The left column holds the rest:
+The docked sidebar on the left (like Figma's design panel) holds the rest, as flat sections:
 
 1. **Eye flow** (key `E`), a main layer switch: where people looked, in order. Show it as **Markers** (numbered points and paths) or as a **Heatmap** (key `H`). The heatmap's colour shows how early an area was looked at, and it includes the path between points. In Combined with markers, **All flows equally** shows every observer at full strength instead of focusing the selected one.
 2. **Touch** (key `T`), a main layer switch: where people held the note.
 3. **General:** **UV photo** (key `U`) shows the straightened UV photo above each note, or a row of photos in Combined; it needs Touch on. **B&W note** (key `B`) shows the artwork in black and white, so only the data has colour.
-4. **Details** for the selected note. It scrolls if it's long and can be collapsed.
+4. **Selected note:** details for the note (viewing order, quote, touched share). It starts collapsed; click its heading to expand it.
 
-Drag the column's right edge to resize it; double-click the edge to reset. The width is remembered.
+The gradient legends (eye-flow heatmap, touch) sit right under their layer switch while the layer is on, so they're always visible. Markers don't need one: their numbers give the order.
+
+The sidebar scrolls as one column. Drag its right edge to resize it; double-click the edge to reset. The width is remembered.
 
 More controls:
-- **Zoom** controls are in the top-right corner, with **Edit** under them.
+- **Zoom** controls are in the top-right corner, with the **Edit** menu under them. It groups the data-correction tools: **Eye-flow points** (in-place editing) and, when running locally, **Touch extraction**.
 - **Flip:** each note has its own button under it (key `F`). In Combined, one button flips the whole stack.
-- **Bottom:** currency tabs (keys `1`–`5`) sit above the denomination dock (keys `←` `→`). The dock lists every denomination; notes without an eye-flow recording show as "Touch only". USD has no touch data.
+- **Bottom:** currency tabs for Euro, Swiss Franc, Russian Ruble and British Pound (keys `1`–`4`) sit above the denomination dock (keys `←` `→`). The dock lists every denomination; notes without an eye-flow recording are labelled "No eye flow", and while eye flow is on they carry a **No eye-flow data** badge on the canvas (Combined notes how many of its notes have eye flow). The US dollar eye-flow data is kept in `flows.json` but hidden, as it has no touch data.
 - **Colours:** when eye flow and touch are both shown, touch heat turns violet so it reads apart from the gaze colours. With eye flow off, touch uses its yellow-to-red scale.
 - **Moving around:** scroll to pan, ⌘/Ctrl + scroll or pinch to zoom, and drag empty space to pan.
 - **Links:** the URL keeps the currency, denomination, layout and switches, so you can share a link to a specific view.
@@ -45,7 +47,7 @@ Markers and lines go from warm and solid for the first things noticed to cool an
 
 ## Edit mode
 
-Turn on **Edit** under the zoom controls in the top-right corner. It works when eye flow is shown as markers on a note with a recording. Save, Export and Discard are at the bottom of the Details panel.
+Choose **Edit → Eye-flow points** in the top-right corner (available when eye flow is shown as markers on a note with a recording). The button changes to **Editing eye flow · Done**. Save, Export and Discard are pinned to the bottom of the sidebar.
 
 - Click the note to add a point, and drag a marker to move it. Dragging elsewhere pans the canvas.
 - In the list, rename, reorder or delete points.
@@ -62,7 +64,7 @@ The source photos come from the PDFs in `UV ink/`:
 swift scripts/render-uv.swift "../../UV ink" uv-source
 ```
 
-Then, with `npm run dev` running, open `#/touch/extract`. It's dev only, and the Details panel links to it. For each page it:
+Then, with `npm run dev` running, choose **Edit → Touch extraction** (or open `#/touch/extract`). It's dev only. For each page it:
 
 1. Rotates the photo upright, choosing the rotation that best matches the reference artwork.
 2. Finds the note's corners. You can drag them if they're off.

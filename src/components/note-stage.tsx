@@ -23,6 +23,8 @@ type Props = {
   above?: React.ReactNode
   /** Replaces the observer name in the caption */
   subtitle?: string
+  /** Overlay pinned to the note's top-left corner, e.g. a "no data" badge */
+  badge?: React.ReactNode
   ref?: React.Ref<HTMLDivElement>
 }
 
@@ -45,6 +47,7 @@ export function NoteStage({
   underlay,
   above,
   subtitle,
+  badge,
   ref,
 }: Props) {
   const flipped = side === 'back'
@@ -84,6 +87,15 @@ export function NoteStage({
         style={{ aspectRatio: note.aspect }}
         onClick={selected ? undefined : onSelect}
       >
+        {badge && (
+          // Counter-scales against the camera zoom like the flip button, so it stays readable.
+          <div
+            className="pointer-events-none absolute top-4 left-4 z-10 origin-top-left"
+            style={{ scale: 'clamp(1, calc(1 / var(--cam-k, 1)), 3)' }}
+          >
+            {badge}
+          </div>
+        )}
         <div
           className={cn(
             'absolute inset-0 rounded-xl transition-transform duration-700 ease-in-out transform-3d',

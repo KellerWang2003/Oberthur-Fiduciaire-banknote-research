@@ -46,13 +46,7 @@ export function heatColor(t: number): [number, number, number] {
   return HEAT_STOPS[HEAT_STOPS.length - 1][1]
 }
 
-// Drawn hot → cold (left to right) so the legend reads first → later, like the order key.
+// Drawn hot → cold (left to right) so the legend reads first → later.
 export const HEAT_GRADIENT = `linear-gradient(to left, ${HEAT_STOPS.map(
   ([t, c]) => `rgb(${c.join(' ')}) ${t * 100}%`,
 ).join(', ')})`
-
-export const ORDER_LEGEND = STEPS.map((_, i) => ({
-  label: i === STEPS.length - 1 ? `${i + 1}+` : String(i + 1),
-  color: orderColor(i),
-  opacity: orderOpacity(i),
-}))

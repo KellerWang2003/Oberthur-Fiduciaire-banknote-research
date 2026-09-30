@@ -1,12 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { Eye, Hand, Layers, LayoutGrid, PanelLeftOpen, RectangleHorizontal } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Switch } from '@/components/ui/switch'
+import { Eye, EyeOff, Hand, Layers, LayoutGrid, RectangleHorizontal } from 'lucide-react'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CanvasStage } from '@/components/canvas-stage'
 import { ColumnResizer } from '@/components/column-resizer'
 import {
-  ControlCard,
   ControlSection,
   LayerToggle,
   Segmented,
@@ -15,6 +12,8 @@ import {
 } from '@/components/controls'
 import { DenominationDock } from '@/components/denomination-dock'
 import { DetailsPanel } from '@/components/details-panel'
+import { EditMenu } from '@/components/edit-menu'
+import { EyeLegend, TouchLegend } from '@/components/legends'
 import { FlipButton } from '@/components/flip-button'
 import { HeatmapLayer } from '@/components/heatmap-layer'
 import { NoteStage } from '@/components/note-stage'
@@ -22,12 +21,18 @@ import { OverlayStage } from '@/components/overlay-stage'
 import { PhotoCard } from '@/components/photo-card'
 import { TouchHeatLayer } from '@/components/touch-heat-layer'
 import { useFlows } from '@/data/store'
-import { CURRENCIES, type CurrencyCode, type Side } from '@/data/types'
+import { CURRENCIES, type Side, type TouchCurrency } from '@/data/types'
 import { useColumnWidth } from '@/hooks/use-column-width'
 import { maskUrl, photoUrl, studyNotes, withoutFlow, type StudyNote } from '@/lib/study-notes'
 import { orderColor } from '@/lib/order'
 import { PALETTES, type TouchPalette } from '@/lib/touch-palette'
-import { cn } from '@/lib/utils'
+
+// USD is hidden: it only has eye-flow data, while the other four have both studies.
+const SHOWN = CURRENCIES.filter((c) => c.code !== 'USD') as {
+  code: TouchCurrency
+  name: string
+  series: string
+}[]
 
 type Layout = 'single' | 'grid' | 'combined'
 type FlowMode = 'markers' | 'heatmap'
@@ -45,6 +50,12 @@ const FLOW_MODES: { value: FlowMode; label: string }[] = [
 
 // Icon chips for the two layer switches echo each layer's colour scale.
 const EYE_SWATCH = `linear-gradient(135deg, ${orderColor(0)}, ${orderColor(1)} 45%, ${orderColor(4)})`
+// Flat, slight tile tints for a layer that's switched on (no gradient)
+const EYE_TINT = 'rgb(255 246 241)'
+const TOUCH_TINT: Record<TouchPalette, string> = {
+  violet: 'rgb(246 244 255)',
+  warm: 'rgb(255 250 238)',
+}
 const touchSwatch = (palette: TouchPalette) => {
   // The darker two-thirds of the scale, so the white icon stays legible.
   const [, a, b, c] = PALETTES[palette].map(([, rgb]) => `rgb(${rgb.join(' ')})`)
@@ -56,7 +67,7 @@ function readUrl(legacyTouch: boolean) {
   const c = p.get('c')?.toUpperCase()
   const view = p.get('view')
   return {
-    currency: (CURRENCIES.some((x) => x.code === c) ? c : 'EUR') as CurrencyCode,
+    currency: (SHOWN.some((x) => x.code === c) ? c : 'EUR') as TouchCurrency,
     denomination: Number(p.get('d')) || null,
     // Older links used overlay / heatmap (flow page) and combined (touch page).
     layout: (view === 'grid'
@@ -111,9 +122,9 @@ function PhotoRow({ notes, side }: { notes: StudyNote[]; side: Side }) {
 export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
   const { flows, dirty, setPoints, discard, save, exportJson } = useFlows()
   const [initial] = useState(() => readUrl(legacyTouch))
-  const [currency, setCurrency] = useState<CurrencyCode>(initial.currency)
+  const [currency, setCurrency] = useState<TouchCurrency>(initial.currency)
   const [layout, setLayout] = useState<Layout>(initial.layout)
-  const [selected, setSelected] = useState<Partial<Record<CurrencyCode, string>>>(
+  const [selected, setSelected] = useState<Partial<Record<TouchCurrency, string>>>(
     initial.denomination
       ? { [initial.currency]: `${initial.currency}-${initial.denomination}` }
       : {},
@@ -130,7 +141,8 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
   const [mono, setMono] = useState(initial.mono)
 
   const [editing, setEditing] = useState(false)
-  const [panelOpen, setPanelOpen] = useState(true)
+  // Notes start collapsed; the legends live with the layer switches, so they're always visible.
+  const [detailsOpen, setDetailsOpen] = useState(false)
   const [zoomSlot, setZoomSlot] = useState<HTMLDivElement | null>(null)
   const column = useColumnWidth()
   const [highlighted, setHighlighted] = useState<string | null>(null)
@@ -146,6 +158,7 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
   // Touch turns violet next to eye flow so it doesn't clash with the warm-to-cool gaze colours.
   const touchPalette: TouchPalette = showFlow ? 'violet' : 'warm'
   const markers = showFlow && flowMode === 'markers'
+  const canEditFlow = markers && !!note.flow
 
   const singleRef = useRef<HTMLDivElement>(null)
   const gridRef = useRef<HTMLDivElement>(null)
@@ -205,6 +218,21 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
     ) : null
   }
 
+  /** Marks notes that weren't part of the eye-flow session, while eye flow is shown */
+  const noFlowBadge = (n: StudyNote) =>
+    showFlow && !n.flow ? (
+      <span className="flex items-center gap-1.5 rounded-lg border bg-background/95 px-2.5 py-1 text-sm font-medium whitespace-nowrap text-muted-foreground shadow-md backdrop-blur">
+        <EyeOff className="size-4" />
+        No eye-flow data
+      </span>
+    ) : null
+
+  const flowCount = notes.filter((n) => n.flow).length
+  const combinedCaption =
+    showFlow && flowCount < notes.length
+      ? `${notes.length} notes · eye flow on ${flowCount}`
+      : `${notes.length} notes`
+
   const touchCoverage = (s: Side) => {
     if (layout !== 'combined') return note.touch[s]?.extraction?.coverage
     const list = notes
@@ -229,7 +257,7 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
     history.replaceState(null, '', `?${p}`)
   }, [currency, note.denomination, layout, showFlow, flowMode, showTouch, showPhoto, mono])
 
-  // Keyboard: F flip · ←/→ denomination · 1–5 currency · G layout
+  // Keyboard: F flip · ←/→ denomination · 1–4 currency · G layout
   // E eye flow · H markers/heatmap · T touch · U UV photo · B black & white
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -249,7 +277,7 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
       else if (k === 'b') setMono((v) => !v)
       else if (e.key === 'ArrowRight') select(notes[(i + 1) % notes.length].key)
       else if (e.key === 'ArrowLeft') select(notes[(i - 1 + notes.length) % notes.length].key)
-      else if (/^[1-5]$/.test(e.key)) setCurrency(CURRENCIES[Number(e.key) - 1].code)
+      else if (/^[1-4]$/.test(e.key)) setCurrency(SHOWN[Number(e.key) - 1].code)
       else return
       e.preventDefault()
     }
@@ -276,8 +304,8 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
         insets={{
           top: 64,
           bottom: 150,
-          // Column panels + its padding, plus a small gap before the note.
-          left: column.settled + 40,
+          // Sidebar width plus a small gap before the note.
+          left: column.settled + 24,
           right: 24,
         }}
       >
@@ -291,6 +319,7 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
             mono={mono}
             underlay={underlay(note)}
             above={photoAbove(note, side)}
+            badge={noFlowBadge(note)}
             highlighted={highlighted}
             onHighlight={setHighlighted}
             onPointsChange={editPoints(note)}
@@ -311,7 +340,8 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
                   editing={editing && markers && !!n.flow}
                   selected={n.key === note.key}
                   caption
-                  subtitle={n.flow?.observer ?? 'Touch only'}
+                  subtitle={n.flow?.observer ?? 'No eye-flow data'}
+                  badge={noFlowBadge(n)}
                   mono={mono}
                   underlay={underlay(n)}
                   above={photoAbove(n, combinedSide)}
@@ -330,6 +360,7 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
           <OverlayStage
             ref={combinedRef}
             title="Combined"
+            caption={combinedCaption}
             notes={notes.map((n) => (showFlow ? n.obs : withoutFlow(n.obs)))}
             mode={showFlow && flowMode === 'heatmap' ? 'heatmap' : 'flow'}
             selectedId={note.obs.id}
@@ -347,8 +378,11 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
         )}
       </CanvasStage>
 
-      {/* Top centre: layout switch */}
-      <div className="pointer-events-none absolute inset-x-0 top-4 z-10 flex justify-center">
+      {/* Top centre of the canvas area: layout switch */}
+      <div
+        className="pointer-events-none absolute top-4 right-0 z-10 flex justify-center"
+        style={{ left: column.width }}
+      >
         <SlidingSwitch
           label="Layout"
           shortcut="G"
@@ -358,25 +392,30 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
         />
       </div>
 
-      {/* Left column: title and layer controls, then details */}
-      <header
-        className="pointer-events-none absolute top-0 bottom-36 left-0 z-10 flex max-w-[calc(100vw-2rem)] flex-col items-stretch gap-2 overflow-y-auto p-4"
-        style={{ width: column.width + 32 }}
+      {/* Docked sidebar (like Figma's design panel): flat sections divided by rules */}
+      <aside
+        className="absolute inset-y-0 left-0 z-20 flex max-w-[calc(100vw-4rem)] flex-col overflow-y-auto border-r bg-background"
+        style={{ width: column.width }}
       >
-        <ControlCard>
-          <div className="px-3.5 pt-3 pb-2.5">
-            <h1 className="text-[15px] leading-tight font-semibold">Banknote Ergo Research</h1>
-            <p className="mt-0.5 text-xs text-muted-foreground">
-              Eye flow &amp; touch · Oberthur Fiduciaire
-            </p>
-          </div>
-          {/* The two data layers are the primary switches */}
+        <div className="border-b px-4 pt-4 pb-3">
+          <h1 className="text-[15px] leading-tight font-semibold">Banknote Ergo Research</h1>
+          <p className="mt-0.5 text-xs text-muted-foreground">
+            Eye flow &amp; touch · Oberthur Fiduciaire
+          </p>
+        </div>
+
+        {/* The two data layers are the primary controls: large tiles */}
+        <div className="flex flex-col gap-2 border-b p-3">
+          <h2 className="px-1 text-[10px] font-medium tracking-wider text-muted-foreground/80 uppercase">
+            Layers
+          </h2>
           <LayerToggle
             icon={Eye}
             title="Eye flow"
             description="Where people looked"
             shortcut="E"
             swatch={EYE_SWATCH}
+            tint={EYE_TINT}
             checked={showFlow}
             onChange={setShowFlow}
           >
@@ -394,18 +433,23 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
                 hint="Show every observer at full strength instead of focusing the selected one"
               />
             )}
+            <EyeLegend mode={flowMode} combined={layout === 'combined'} />
           </LayerToggle>
-
           <LayerToggle
             icon={Hand}
             title="Touch"
             description="Where people held it"
             shortcut="T"
             swatch={touchSwatch(touchPalette)}
+            tint={TOUCH_TINT[touchPalette]}
             checked={showTouch}
             onChange={setShowTouch}
-          />
+          >
+            <TouchLegend palette={touchPalette} combined={layout === 'combined'} />
+          </LayerToggle>
+        </div>
 
+        <div className="border-b px-2 pb-1">
           <ControlSection title="General">
             <ToggleRow
               label="UV photo"
@@ -425,82 +469,59 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
               hint="Show the artwork in black and white so only the data has colour (B)"
             />
           </ControlSection>
-        </ControlCard>
+        </div>
 
-        {panelOpen ? (
-          <div className="pointer-events-auto flex min-h-64 flex-col">
-            <DetailsPanel
-              note={note}
-              side={side}
-              combined={layout === 'combined'}
-              showFlow={showFlow}
-              flowMode={flowMode}
-              showTouch={showTouch}
-              touchPalette={touchPalette}
-              touchCoverage={touchCoverage}
-              editing={editing}
-              dirty={dirty}
-              status={status}
-              highlighted={highlighted}
-              onHighlight={setHighlighted}
-              onPointsChange={editPoints(note)}
-              onClose={() => setPanelOpen(false)}
-              onSave={handleSave}
-              onExport={exportJson}
-              onDiscard={discard}
-            />
-          </div>
-        ) : (
-          <Button
-            variant="outline"
-            size="sm"
-            className="pointer-events-auto w-fit shadow-sm"
-            onClick={() => setPanelOpen(true)}
-          >
-            <PanelLeftOpen />
-            Details
-          </Button>
-        )}
-      </header>
+        <DetailsPanel
+          note={note}
+          side={side}
+          combined={layout === 'combined'}
+          showFlow={showFlow}
+          flowMode={flowMode}
+          showTouch={showTouch}
+          touchCoverage={touchCoverage}
+          editing={editing}
+          dirty={dirty}
+          status={status}
+          highlighted={highlighted}
+          onHighlight={setHighlighted}
+          onPointsChange={editPoints(note)}
+          onSave={handleSave}
+          onExport={exportJson}
+          onDiscard={discard}
+          open={detailsOpen}
+          onOpenChange={setDetailsOpen}
+        />
+      </aside>
+      {/* Resize handle on the sidebar's right edge */}
       <div
-        className="pointer-events-none absolute top-0 bottom-36 left-0 z-10"
-        style={{ width: column.width + 32 }}
+        className="pointer-events-none absolute inset-y-0 left-0 z-20"
+        style={{ width: column.width }}
       >
         <ColumnResizer {...column.handleProps} />
       </div>
 
-      {/* Top right: zoom, then the Edit tool (a tool, not a view option) */}
+      {/* Top right: zoom, then the Edit menu (data-correction tools, not view options) */}
       <div className="absolute top-4 right-4 z-10 flex flex-col items-end gap-2">
         <div ref={setZoomSlot} />
-        <label
-          className={cn(
-            'flex items-center gap-2 rounded-lg border bg-background/95 px-2.5 py-1.5 text-sm shadow-sm backdrop-blur',
-            !(markers && note.flow) && 'text-muted-foreground',
-          )}
-          title={
-            markers && note.flow
-              ? 'Edit the eye-flow points'
-              : 'Editing needs eye flow shown as markers on a note with a recording'
-          }
-        >
-          <Switch
-            checked={editing}
-            onCheckedChange={setEditing}
-            disabled={!(markers && note.flow)}
-          />
-          Edit
-        </label>
+        <EditMenu
+          editing={editing && canEditFlow}
+          onEditingChange={setEditing}
+          canEditFlow={canEditFlow}
+        />
       </div>
 
-      {/* Bottom: currency tabs above the denomination dock (flip buttons live on the canvas) */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex flex-col items-center gap-2 p-4">
+      {/* Bottom of the canvas area: currency tabs above the denomination dock */}
+      <div
+        className="pointer-events-none absolute right-0 bottom-0 z-10 flex flex-col items-center gap-2 p-4"
+        style={{ left: column.width }}
+      >
         <Tabs
           value={currency}
-          onValueChange={(v) => setCurrency(v as CurrencyCode)}
+          onValueChange={(v) => setCurrency(v as TouchCurrency)}
           className="pointer-events-auto max-w-full"
         >
           <TabsList className="h-10! rounded-xl border bg-background/95 p-1 shadow-lg backdrop-blur">
-            {CURRENCIES.map((c) => (
+            {SHOWN.map((c) => (
               <TabsTrigger key={c.code} value={c.code} className="rounded-lg px-3" title={c.name}>
                 <span className="max-lg:hidden">{c.name}</span>
                 <span className="lg:hidden">{c.code}</span>
@@ -513,7 +534,7 @@ export function StudyPage({ legacyTouch = false }: { legacyTouch?: boolean }) {
             notes={notes.map((n) => ({
               id: n.key,
               label: n.label,
-              sublabel: n.flow?.observer ?? 'Touch only',
+              sublabel: n.flow?.observer ?? 'No eye flow',
               thumb: n.obs.front.image,
               vertical: n.obs.orientation === 'vertical',
             }))}

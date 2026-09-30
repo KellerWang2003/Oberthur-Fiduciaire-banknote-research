@@ -25,6 +25,8 @@ type Props = {
   /** Shown between the caption and the stack, e.g. a row of UV photos */
   above?: React.ReactNode
   title?: string
+  /** Replaces the "N notes" caption */
+  caption?: string
   ref?: React.Ref<HTMLDivElement>
 }
 
@@ -52,6 +54,7 @@ export function OverlayStage({
   underlay,
   above,
   title,
+  caption,
   ref,
 }: Props) {
   // Notes of one currency differ slightly in proportion; stretch them to a shared frame.
@@ -110,8 +113,10 @@ export function OverlayStage({
   return (
     <div ref={ref} className="flex flex-col gap-4" style={{ width }}>
       <div className="flex items-baseline gap-3 text-2xl">
-        <span className="font-semibold">{title ?? (mode === 'heatmap' ? 'Heatmap' : 'Overlay')}</span>
-        <span className="text-muted-foreground">{notes.length} notes</span>
+        <span className="font-semibold">
+          {title ?? (mode === 'heatmap' ? 'Heatmap' : 'Overlay')}
+        </span>
+        <span className="text-muted-foreground">{caption ?? `${notes.length} notes`}</span>
         <span className="ml-auto text-base tracking-wide text-muted-foreground uppercase">
           {side}
         </span>
